@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_init_plant_database",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_init_plant_database",
+  "parent":{
+    "name":"Setup",
+    "path":"folders/Scripts/Setup.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

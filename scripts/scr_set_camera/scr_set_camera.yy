@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_set_camera",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_set_camera",
+  "parent":{
+    "name":"Setup",
+    "path":"folders/Scripts/Setup.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

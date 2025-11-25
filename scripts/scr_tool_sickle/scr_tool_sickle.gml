@@ -1,0 +1,22 @@
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function tool_sickle(plant_passed){
+	plant = plant_passed;
+	with(plant){
+		if(!fruit_ripe or !plant_data.perennial){
+			underlying_tile.occupied = false;
+			global.game_setup.empty_tiles += 1;
+			global.game_setup.plant_number -=1;
+			instance_destroy();
+		}
+		if(fruit_ripe){
+			add_card(plant_data.fruit_card, plant_data.fruit_card_n)
+			if(plant_data.perennial){
+				ripe_count = 0;
+				fruit_ripe = false;
+				image_blend = c_white;
+			}
+		}
+		if (plant_data.material_card != -1) add_card(plant_data.material_card);
+	}
+}

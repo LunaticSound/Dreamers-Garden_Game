@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_find_empty_node",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_find_empty_node",
+  "parent":{
+    "name":"Garden",
+    "path":"folders/Scripts/Garden.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

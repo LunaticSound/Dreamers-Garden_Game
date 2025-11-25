@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_gui_setup",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_gui_setup",
+  "parent":{
+    "name":"Setup",
+    "path":"folders/Scripts/Setup.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
