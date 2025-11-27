@@ -3,7 +3,6 @@
 
 move_altar();
 
-if (global.state == game_state.RECEIVE) receive_cards();
 if (global.state == game_state.PLANT) plant_phase();
 if (global.state == game_state.TOOL) tool_phase();
 if (mouse_check_button_pressed(mb_left)) card_clicked();

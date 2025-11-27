@@ -5,7 +5,7 @@ draw_self();
 hunger_disp();
 
 draw_set_colour($1B062D);
-if(cursor) draw_circle(x - 50, y + 200, 153, false);
+if(cursor) draw_circle(x, y, 153, false);
 draw_set_colour(c_white);
 draw_sprite_ext(sprite_index, 0, x, y, 1, 1, wheel_rotation, c_white, 1);
 

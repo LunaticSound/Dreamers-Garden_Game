@@ -172,7 +172,7 @@ ds_map_add(global.card_database, "bloatkin",
 	
 	// --- CRAFTING MATERIALS ---
 	
-ds_map_add(global.card_database, "root", 
+ds_map_add(global.card_database, material.DEADWOOD, 
 	    {
         name: "Deadwood",
 		category: card_type.MATERIAL,
@@ -186,7 +186,7 @@ ds_map_add(global.card_database, "root",
 		craft_sprite: spr_craft_fruit_earth
     })
 	
-ds_map_add(global.card_database, "shard", 
+ds_map_add(global.card_database, material.MIRRORGLAS, 
 	    {
         name: "Mirrorglas",
 		category: card_type.MATERIAL,
@@ -200,7 +200,7 @@ ds_map_add(global.card_database, "shard",
 		craft_sprite: spr_craft_fruit_illusion
     })
 	
-ds_map_add(global.card_database, "moonstone", 
+ds_map_add(global.card_database, material.MOONSTONE, 
 	    {
         name: "Moonstone",
 		category: card_type.MATERIAL,
@@ -214,7 +214,7 @@ ds_map_add(global.card_database, "moonstone",
 		craft_sprite: spr_craft_fruit_moon
     })
 	
-ds_map_add(global.card_database, "radiant_root", 
+ds_map_add(global.card_database, material.RADIANT_ROOT, 
 	    {
         name: "Radiant Root",
 		category: card_type.MATERIAL,

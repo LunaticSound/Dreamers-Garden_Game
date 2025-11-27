@@ -69,6 +69,7 @@ function card_clicked(){
 									with(obj_game_controller){
 									altar.target_x += 1000;
 									altar.centered = true;
+									altar.button.x -= 400;
 									consume.target_x -= 1200;
 									consume.centered = true;
 									}
@@ -82,6 +83,7 @@ function card_clicked(){
 									with(obj_game_controller){
 									forge.target_x += 1000;
 									forge.centered = true;
+									forge.button.x -= 400;
 									}
 									fruit_clicked = true;
 								}else{

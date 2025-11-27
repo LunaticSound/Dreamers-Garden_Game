@@ -11,14 +11,13 @@ global.garden_plant_list = ds_list_create();
 global.grid_node_instances = create_garden_grid(global.game_setup.garden_size[0],global.game_setup.garden_size[1], global.game_setup.tile_size);
 altar_cards = [];
 forge_cards = [];
-offering = [];
 
 
+/*
 // In the Create Event of a controller object:
 display_set_gui_size(2560, 1440); // Base resolution
 window_set_fullscreen(true);
-
-global.selected_card_object = -1;
+*/
 
 setup_seasons_wheel_glow();
 wheel_rotation = 0;
@@ -26,7 +25,7 @@ wheel_rotation = 0;
 cursor = false;
 
 global.selected_card = -1; // -1 = no card selected
-
+global.selected_card_object = -1;
 global.plant_sprite = instance_create_depth(0, 0, global.game_setup.tool_layer_depth, obj_plant_sprite);
 global.plant_sprite.visible = false; // Initially hidden
 

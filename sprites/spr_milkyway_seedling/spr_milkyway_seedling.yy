@@ -5,21 +5,21 @@
   "bbox_bottom":643,
   "bbox_left":183,
   "bbox_right":580,
-  "bbox_top":282,
+  "bbox_top":323,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"592f49b4-45ec-4323-b978-a269b65db6c3","name":"592f49b4-45ec-4323-b978-a269b65db6c3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"47ccc58e-5413-4a45-b33e-3ed2850d7951","name":"47ccc58e-5413-4a45-b33e-3ed2850d7951","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":644,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"c3c59684-4aff-4858-b50b-980158102099","blendMode":0,"displayName":"default","isLocked":false,"name":"c3c59684-4aff-4858-b50b-980158102099","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"7eb0a4c8-0ed5-4f80-95d0-79286c8e043b","blendMode":0,"displayName":"default","isLocked":false,"name":"7eb0a4c8-0ed5-4f80-95d0-79286c8e043b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_milkyway_seedling",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"592f49b4-45ec-4323-b978-a269b65db6c3","path":"sprites/spr_milkyway_seedling/spr_milkyway_seedling.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"1c24997a-873c-45f9-8f23-14a661354076","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"47ccc58e-5413-4a45-b33e-3ed2850d7951","path":"sprites/spr_milkyway_seedling/spr_milkyway_seedling.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"aa29a7f4-4711-4082-a04e-4f05d58d0e95","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
