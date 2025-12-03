@@ -5,6 +5,7 @@ move_altar();
 
 if (global.state == game_state.PLANT) plant_phase();
 if (global.state == game_state.TOOL) tool_phase();
+if (global.state == game_state.GROW) growth_phase();
 if (mouse_check_button_pressed(mb_left)) card_clicked();
 
 if (cursor) emit_seasons_wheel_glow(x, y, 220, 15);

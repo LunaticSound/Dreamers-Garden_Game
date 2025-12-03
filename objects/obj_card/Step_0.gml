@@ -10,6 +10,7 @@ if(device_mouse_check_button_pressed(0, mb_left)){
 			target_y = base_y;
 			card_selected = false;
 			fruit_clicked = false;
+			if (global.state != game_state.TOOL && global.state != game_state.PLANT) global.state = game_state.CARD;
 				}
 			}
 }

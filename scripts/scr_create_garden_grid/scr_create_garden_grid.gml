@@ -25,6 +25,7 @@ for (var i = 0; i < grid_width; i++) {
 		
 		with(inst){
 			heat = global.environment.heat;
+			inhabitant = -1;
 			gx = i;
 			gy = j;
 		}

@@ -18,7 +18,7 @@
   "name":"rm_game_over",
   "parent":{
     "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "path":"folders/Objects/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

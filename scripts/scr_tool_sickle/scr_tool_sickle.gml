@@ -7,6 +7,7 @@ function tool_sickle(plant_passed){
 			underlying_tile.occupied = false;
 			global.game_setup.empty_tiles += 1;
 			global.game_setup.plant_number -=1;
+			underlying_tile.inhabitant = -1;
 			instance_destroy();
 		}
 		if(fruit_ripe){

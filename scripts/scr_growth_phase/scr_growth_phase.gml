@@ -1,7 +1,15 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function growth_phase(){
-	for(var i = 0; i < ds_list_size(global.garden_plant_list); i++){
+	    // Finished?
+    if (day_end_index >= ds_list_size(global.garden_plant_list)) {
+        end_day();
+        return;
+    }
+
+
+	
+	/* for(var i = 0; i < ds_list_size(global.garden_plant_list); i++){
 		with(global.garden_plant_list[| i][? "plant_id"]){
 			if (underlying_tile.heat < plant_data.heat_pref - plant_data.heat_tol) cold = true;
 				else cold = false;
@@ -28,4 +36,5 @@ function growth_phase(){
 		}
 	}
 	end_day();
+	*/
 }

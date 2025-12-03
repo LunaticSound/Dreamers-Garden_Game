@@ -4,4 +4,5 @@
 draw_self();
 if (shoveled) draw_sprite(spr_hole, 0, x, y)
 
-draw_text(x, y, string(heat));
+
+// draw_text(x, y, string(heat));

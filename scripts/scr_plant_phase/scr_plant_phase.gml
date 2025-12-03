@@ -16,13 +16,12 @@ function plant_phase() {
 				}
 			}
 		}
-		if(instance_position(mouse_x, mouse_y, obj_game_controller) or instance_position(mouse_x, mouse_y, obj_altar_parent)){
+		if(!position_meeting(mouse_x, mouse_y, obj_grid_node)){
 			with (global.plant_sprite) { visible = false; }
 			with (global.selected_card_object) { visible = true; }
 			with (obj_grid_node) image_blend = c_white;
 			global.state = game_state.CARD;
-					
-					return;
+			return;
 		}
 	}
 
@@ -51,7 +50,7 @@ function plant_phase() {
 			}
 		}
 	}
-    if (mouse_check_button_pressed(mb_left)) {
+    if (mouse_check_button_pressed(mb_left) && position_meeting(mouse_x, mouse_y, obj_grid_node)) {
 		// Create plant
 	    var new_plant = instance_create_depth(nearest_node.x, nearest_node.y,
         global.game_setup.garden_layer_depth, obj_garden_plant);
@@ -66,7 +65,8 @@ function plant_phase() {
 			fruit_x = x + plant_data.fruit_x;
 			fruit_y = y + plant_data.fruit_y;
 			gx = nearest_node.gx;
-			gy = nearest_node.gy;			
+			gy = nearest_node.gy;		
+			nearest_node.inhabitant = id;
 			switch(plant_data.effect){
 				case plant_effects.CHANGE_HEAT:
 				change_heat(gx, gy, plant_data.effect_radius, plant_data.effect_strength)						

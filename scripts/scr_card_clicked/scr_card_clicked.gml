@@ -13,7 +13,8 @@ function card_clicked(){
 					altar.centered = false;
 				}
         with (top) {
-			if (global.state == game_state.CARD){
+			
+			if (global.state == game_state.CARD or global.state == game_state.SHOW_CARD){
 				if (card_selected){
 					global.selected_card = card_id; // Store the selected card ID
 					global.selected_card_object = id;
@@ -96,6 +97,7 @@ function card_clicked(){
 						target_x = room_width/2;
 						target_y = room_height/2;
 						card_selected = true;
+						global.state = game_state.SHOW_CARD;
 					}
 				}
 			}

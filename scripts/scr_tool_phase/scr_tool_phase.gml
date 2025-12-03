@@ -3,11 +3,15 @@
 
 function tool_phase(){
 		if(mouse_check_button_pressed(mb_left)){
-			if (instance_position(mouse_x, mouse_y, obj_game_controller) or instance_position(mouse_x, mouse_y, obj_altar_parent)){
+			if (position_meeting(mouse_x, mouse_y, obj_game_controller) or position_meeting(mouse_x, mouse_y, obj_altar_parent)){
+				global.plant_sprite.visible = false;
+				with (global.selected_card_object) { visible = true; }
+				// global.state = game_state.CARD;
+				return;
+			}else if(!position_meeting(mouse_x, mouse_y, obj_grid_node)){
 				global.plant_sprite.visible = false;
 				with (global.selected_card_object) { visible = true; }
 				global.state = game_state.CARD;
-				return;
 			}
         // Check if mouse is over a visible card
         var top_card = instance_position(mouse_x, mouse_y, obj_card);
@@ -21,12 +25,12 @@ function tool_phase(){
                     return;
 					}
                 }
-		if (position_meeting(mouse_x, mouse_y, obj_game_controller)){
+/*		if (position_meeting(mouse_x, mouse_y, obj_game_controller)){
 				    with (global.plant_sprite) { visible = false; }
                     with (global.selected_card_object) { visible = true; }
                     global.state = game_state.CARD;
                     return;
-				}
+				}*/
             }
         }
 		switch (global.card_database[? global.selected_card].target){
@@ -46,7 +50,7 @@ function tool_phase(){
 		global.plant_sprite.y = grid_y;
 
 		        // Create or update the plant sprite instance
-        if ((mouse_check_button_pressed(mb_left)) && (!position_meeting(mouse_x, mouse_y, obj_game_controller))){
+        if ((mouse_check_button_pressed(mb_left)) && (position_meeting(mouse_x, mouse_y, obj_grid_node))){
 				switch (global.card_database[? global.selected_card].effect){
 					case tool_effect.SHOVEL:
 					tool_shovel(nearest_node);

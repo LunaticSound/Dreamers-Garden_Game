@@ -12,17 +12,11 @@ global.grid_node_instances = create_garden_grid(global.game_setup.garden_size[0]
 altar_cards = [];
 forge_cards = [];
 
-
-/*
-// In the Create Event of a controller object:
-display_set_gui_size(2560, 1440); // Base resolution
-window_set_fullscreen(true);
-*/
-
 setup_seasons_wheel_glow();
 wheel_rotation = 0;
 
 cursor = false;
+end_day_index = 0;
 
 global.selected_card = -1; // -1 = no card selected
 global.selected_card_object = -1;
@@ -37,8 +31,11 @@ enum game_state {
     CARD,   // selecting and handling cards
     PLANT,   // placing the chosen plant
 	TOOL,    // using tools
+	GROW,
 	END_DAY,
-	RECEIVE
+	RECEIVE,
+	CRAFT,
+	SHOW_CARD
 }
 
 global.state = game_state.CARD;
