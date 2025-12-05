@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_growth_phase",
+  "%Name":"scr_calculate_dots_display",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_growth_phase",
+  "name":"scr_calculate_dots_display",
   "parent":{
-    "name":"Growth Phase",
-    "path":"folders/Scripts/Garden/Growth Phase.yy",
+    "name":"Garden",
+    "path":"folders/Scripts/Garden.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

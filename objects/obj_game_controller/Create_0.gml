@@ -16,7 +16,7 @@ setup_seasons_wheel_glow();
 wheel_rotation = 0;
 
 cursor = false;
-end_day_index = 0;
+day_end_index = 0;
 
 global.selected_card = -1; // -1 = no card selected
 global.selected_card_object = -1;

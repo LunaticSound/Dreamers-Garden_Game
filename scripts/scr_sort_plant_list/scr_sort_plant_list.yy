@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_growth_phase",
+  "%Name":"scr_sort_plant_list",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_growth_phase",
+  "name":"scr_sort_plant_list",
   "parent":{
     "name":"Growth Phase",
     "path":"folders/Scripts/Garden/Growth Phase.yy",

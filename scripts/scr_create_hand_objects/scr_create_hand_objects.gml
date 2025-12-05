@@ -13,7 +13,7 @@ function create_hand_objects() {
               ? lerp(fan_angle, -fan_angle, i / (num_cards - 1)) 
               : 0; // single card stays centered
 
-		var spacing = global.game_setup.card_spacing / (ds_list_size(global.player.hand)+1);
+		var spacing = global.game_setup.card_spacing / num_cards + 1;
         card_x = room_width / 2 - spacing * (num_cards - 1)
                      + (i * spacing * 2);
         card_y = room_height + 100 + abs(room_width/2 - card_x)/8;

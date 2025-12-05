@@ -19,6 +19,9 @@ function card_clicked(){
 					global.selected_card = card_id; // Store the selected card ID
 					global.selected_card_object = id;
 					switch(global.card_database[? global.selected_card].category){
+						
+						// PLANTING
+						
 						case card_type.PLANT:
 							if(global.game_setup.shoveled_tiles > 0){
 								visible = false;
@@ -37,6 +40,10 @@ function card_clicked(){
 								card_refuse();
 							}
 							break;
+							
+							// TOOLS
+							
+							
 							case card_type.TOOL:
 								switch(global.card_database[? global.selected_card].target){
 									case tool_target.EMPTY_TILE:
@@ -65,8 +72,12 @@ function card_clicked(){
 									break;
 									}
 								break;
+								
+								// FRUITS
+								
+								
 								case card_type.FRUIT:
-								if(!fruit_clicked){
+								 if(!fruit_clicked){
 									with(obj_game_controller){
 									altar.target_x += 1000;
 									altar.centered = true;

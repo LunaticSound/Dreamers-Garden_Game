@@ -26,7 +26,7 @@ y_vel *= damping;
 // Update position
 y += y_vel;
 
-if (global.state == game_state.CARD){
+if (global.state == game_state.CRAFT){
 if (active) activate_altar();
 craft_enter();
 }

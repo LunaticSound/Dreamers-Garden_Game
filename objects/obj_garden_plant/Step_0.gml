@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+each_plant_growth_phase();
+
 var flicker_f = plant_data.pulse_strength;
 var wiggle = plant_data.fruit_wiggle;
 var base_x = x + plant_data.fruit_x;

@@ -7,7 +7,7 @@ function end_day(){
 		}
 	}
 	for(var i = 0; i < ds_list_size(global.garden_plant_list); i++){
-		with(global.garden_plant_list[| i][? "plant_id"]){
+		with(global.garden_plant_list[| i]){
 			if (plant_data.effect != -1) switch(plant_data.effect){
 				case plant_effects.CHANGE_HEAT:
 					change_heat(gx, gy, plant_data.effect_radius, plant_data.effect_strength);

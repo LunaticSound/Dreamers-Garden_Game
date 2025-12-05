@@ -58,6 +58,7 @@ function plant_phase() {
         with (new_plant) {
 	        plant_id = global.selected_card;
             plant_data = global.plant_database[? plant_id];
+			vitality = floor(plant_data.max_vitality / 2);
             age_in_days = 0;
             ripe = false;
             glow_size = plant_data.glow_size;
@@ -67,18 +68,18 @@ function plant_phase() {
 			gx = nearest_node.gx;
 			gy = nearest_node.gy;		
 			nearest_node.inhabitant = id;
+			heat_set = false;
+			life_set = false;
+			calculate_dots_display();
 			switch(plant_data.effect){
 				case plant_effects.CHANGE_HEAT:
 				change_heat(gx, gy, plant_data.effect_radius, plant_data.effect_strength)						
 			}
 			choose_particle();
-            var plant_add = ds_map_create();
-            plant_add[? "grid_x"] = nearest_node.x;
-            plant_add[? "grid_y"] = nearest_node.y;
-            plant_add[? "plant_id"] = id;
             underlying_tile = nearest_node;
-            ds_list_add(global.garden_plant_list, plant_add);
+            ds_list_add(global.garden_plant_list, id);
             }
+			sort_plant_list();
             // Update tile status
             with (nearest_node) {
                 occupied = true;
