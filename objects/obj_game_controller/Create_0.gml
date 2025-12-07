@@ -7,6 +7,7 @@ randomise();
 init_card_database();
 init_ground_database();
 init_plant_database();
+init_weather_database();
 global.garden_plant_list = ds_list_create();
 global.grid_node_instances = create_garden_grid(global.game_setup.garden_size[0],global.game_setup.garden_size[1], global.game_setup.tile_size);
 altar_cards = [];
@@ -26,6 +27,8 @@ global.plant_sprite.visible = false; // Initially hidden
 altar = instance_create_depth(-800, 150, global.game_setup.altar_layer_depth, obj_altar);
 forge = instance_create_depth(-800, 150, global.game_setup.altar_layer_depth, obj_forge);
 consume = instance_create_depth(room_width, 150, global.game_setup.altar_layer_depth, obj_consume);
+with(consume){
+	game_controller = other.id}
 
 enum game_state {
     CARD,   // selecting and handling cards

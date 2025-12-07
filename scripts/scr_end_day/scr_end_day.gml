@@ -1,9 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function end_day(){
+	change_weather();
 	for (var i = 0; i < array_length(global.grid_node_instances); i++){
 		for (var j = 0; j < array_length(global.grid_node_instances[i]); j++){
 			global.grid_node_instances[i][j].heat = global.environment.heat;
+			global.grid_node_instances[i][j].water_stored = clamp(global.grid_node_instances[i][j].water_stored + global.environment.rain, 0, 6);
 		}
 	}
 	for(var i = 0; i < ds_list_size(global.garden_plant_list); i++){
@@ -19,8 +21,6 @@ function end_day(){
 	global.player.hunger_limit += 1;
 	global.player.hunger_rate += 1;
 	global.game_setup.days += 1;
-	wheel_rotation += 5.625;
-	discard_hand(ds_list_size(global.player.hand));
 	// draw_hand(4);
 	 to_draw = 4;
 	 alarm[0] = 13;  // draw cards to to_draw

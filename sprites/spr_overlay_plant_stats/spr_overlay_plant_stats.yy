@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Plant Display",
+    "path":"folders/Sprites/GUI/Plant Display.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

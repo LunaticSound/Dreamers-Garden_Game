@@ -7,6 +7,9 @@ for (var i = 0; i < array_length(tiles); i++) {
     var tile = tiles[i];
     with (tile){
 		heat += heat_change;	
+		if(inhabitant != -1){ 
+			with(inhabitant) calculate_temp_values(other);
+		}
 	}
 }
 

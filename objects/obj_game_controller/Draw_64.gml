@@ -2,4 +2,5 @@
 // You can write your code in this editor
 
 draw_set_colour(c_white);
-draw_text(100, 100, "Game State: " + string(global.state))
+draw_text(100, 100, "Temperature: " + string(global.environment.heat))
+draw_text(300, 100, "Rain: " + string(global.environment.rain))

@@ -70,13 +70,15 @@ function plant_phase() {
 			nearest_node.inhabitant = id;
 			heat_set = false;
 			life_set = false;
+			water_set = false;
+			underlying_tile = nearest_node;
+			calculate_temp_values(nearest_node);
 			calculate_dots_display();
 			switch(plant_data.effect){
 				case plant_effects.CHANGE_HEAT:
 				change_heat(gx, gy, plant_data.effect_radius, plant_data.effect_strength)						
 			}
 			choose_particle();
-            underlying_tile = nearest_node;
             ds_list_add(global.garden_plant_list, id);
             }
 			sort_plant_list();

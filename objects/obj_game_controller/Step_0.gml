@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 move_altar();
+weather_effects();
 
 if (global.state == game_state.PLANT) plant_phase();
 if (global.state == game_state.TOOL) tool_phase();

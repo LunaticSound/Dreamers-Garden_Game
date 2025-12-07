@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_plant_phase",
   "parent":{
-    "name":"Garden",
-    "path":"folders/Scripts/Garden.yy",
+    "name":"Plant Phase",
+    "path":"folders/Scripts/Garden/Plant Phase.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

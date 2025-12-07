@@ -19,6 +19,7 @@ global.game_setup = {
 	plant_number: 0,
 	days: 0,
 	season_length: 18,
+	temp_range: 58
 	};
 
 global.player = {
@@ -31,12 +32,20 @@ global.player = {
 	hand_objects: ds_list_create(),
 	unlocked_cards: [0, 1]
 };
+
+enum plant_states {
+	SEEDLING,
+	REGULAR,
+	SPLENDID,
+	SICK,
+	DEAD
+};
 	
 enum weather_type {
     CLEAR,   
     CLOUDY,  
 	RAINY,
-	TORRENT,
+	STORM,
 	HEATWAVE,
 	DROUGHT
 };
@@ -51,6 +60,7 @@ enum season_type {
 global.environment = {
 	season: season_type.SPRING,
 	weather: weather_type.CLEAR,
-	heat: 18,
+	heat: 20,
+	rain: 0
 	};
 }
