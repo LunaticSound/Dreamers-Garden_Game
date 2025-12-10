@@ -51,14 +51,7 @@ function tool_phase(){
 
 		        // Create or update the plant sprite instance
         if ((mouse_check_button_pressed(mb_left)) && (position_meeting(mouse_x, mouse_y, obj_grid_node))){
-				switch (global.card_database[? global.selected_card].effect){
-					case tool_effect.SHOVEL:
-					tool_shovel(nearest_node);
-					break;
-					case tool_effect.SICKLE:
-					tool_sickle(nearest_node);
-					break
-					}
+			choose_tool_effect(nearest_node);
 			with (global.plant_sprite) visible = false;
 						// Remove the selected card from hand and hand_objects
 						for (var i = 0; i < ds_list_size(global.player.hand_objects); i++) {

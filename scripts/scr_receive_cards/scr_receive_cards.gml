@@ -3,26 +3,12 @@
 function receive_cards(offerings){
 if (!loot_spawned){
 	if(position_meeting(mouse_x, mouse_y, self)){
-			for (var i = 0; i < 3; i += 1){
+
 				var loot = determine_loot(offerings);
-				var inst = instance_create_depth(room_width/2 - 400 + i*400, room_height/2, global.game_setup.card_layer_depth, obj_card_craft);
-				inst.loot = loot;
-				with inst{
-					card_data = global.card_database[? loot];
-					card_id = loot;
-					sprite_index = card_data.sprite;
-					target_x = x;
-					base_x = x;
-					target_y = y;
-					base_y = y;
-					y_vel = 0;
-					x_vel = 0;
-					target_angle = obj_game_controller.t_angle;
-					x = room_width + 200;
-					}
-				loot_cards[i] = inst;
-				}	
-			loot_spawned = true;
+				var inst = instance_create_depth(room_width/2, room_height/2, -5000, obj_booster);
+				inst.loot = loot[0];
+				inst.sprite_index = loot[1];
+				inst.controller = id;
 		}
 	}
 if (loot_spawned){

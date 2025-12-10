@@ -84,10 +84,11 @@ function card_clicked(){
 									altar.button.x -= 400;
 									consume.target_x -= 1200;
 									consume.centered = true;
+									global.state = game_state.CRAFT;
 									}
 									fruit_clicked = true;
 								}else{
-									fruit_clicked = false;
+									//fruit_clicked = false;
 								}
 								break;
 								case card_type.MATERIAL:
@@ -96,10 +97,11 @@ function card_clicked(){
 									forge.target_x += 1000;
 									forge.centered = true;
 									forge.button.x -= 400;
+									global.state = game_state.CRAFT;
 									}
 									fruit_clicked = true;
 								}else{
-									fruit_clicked = false;
+									//fruit_clicked = false;
 								}
 								break;
 							}

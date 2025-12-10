@@ -5,7 +5,7 @@ scr_card_movement();
 
 if(device_mouse_check_button_pressed(0, mb_left)){
 	            if(card_selected){
-		if (!position_meeting(mouse_x, mouse_y, self)){
+		if (!position_meeting(mouse_x, mouse_y, self) && !position_meeting(mouse_x, mouse_y, obj_altar_parent)){
 			target_x = base_x;
 			target_y = base_y;
 			card_selected = false;

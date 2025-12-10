@@ -20,8 +20,6 @@ dots_to_draw = [];
 draw_scale = 0.5;
 plant_state = plant_states.SEEDLING;
 
-// calculate days display positions
-
 
 
 // scr_orb_rise_particles(x - 80, y - 60, 200, 54);

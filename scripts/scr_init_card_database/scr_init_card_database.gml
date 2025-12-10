@@ -19,16 +19,45 @@ enum tool_target {
 
 enum tool_effect {
 	SHOVEL,
-	SICKLE
+	SICKLE,
+	WATERING_CAN
 }
 
+enum plant_cards {
+	STARDUST,
+	MOON_ROOT,
+	GOLDEN_CLOVER,
+	MAGIKA,
+	PUMPKIN,
+	MILKYWAY
+	}
+
+enum tool_cards {
+	SHOVEL = 1000,
+	SICKLE = 1001,
+	WATERING_CAN = 1002,
+}
+
+enum fruit_cards{
+	GOLDEN_PEACH = 2000,
+	MAGIFRUIT = 2001,
+	MOONFRUIT = 2002,
+	BLOATKIN = 2003
+}
+	
+enum material{
+	DEADWOOD = 3000,
+	RADIANT_ROOT = 3001,
+	MIRRORGLAS = 3002,
+	MOONSTONE= 3003
+}
 
 
 global.card_database = ds_map_create();
 
 // --- PLANTS ---
 
-ds_map_add(global.card_database, "stardust", 
+ds_map_add(global.card_database, plant_cards.STARDUST, 
     {
         name: "Stardust",
 		category: card_type.PLANT,
@@ -38,7 +67,7 @@ ds_map_add(global.card_database, "stardust",
 		sprite: spr_card_plant_stardust,
 		plant_sprite: spr_plant_stardust
     });
-ds_map_add(global.card_database, "moon_root", 
+ds_map_add(global.card_database, plant_cards.MOON_ROOT, 
     {
         name: "Moon Root",
 		category: card_type.PLANT,
@@ -48,7 +77,7 @@ ds_map_add(global.card_database, "moon_root",
 		sprite: spr_card_plant_moon_root,
 		plant_sprite: spr_moon_root_seedling
     })
-ds_map_add(global.card_database, "golden_clover", 
+ds_map_add(global.card_database, plant_cards.GOLDEN_CLOVER, 
 	{
         name: "Golden Clover",
 		category: card_type.PLANT,
@@ -58,7 +87,7 @@ ds_map_add(global.card_database, "golden_clover",
 		sprite: spr_card_plant_golden_clover,
 		plant_sprite: spr_golden_clover_seedling
     })
-ds_map_add(global.card_database, "magika", 
+ds_map_add(global.card_database, plant_cards.MAGIKA, 
     {
         name: "Magika",
 		category: card_type.PLANT,
@@ -68,7 +97,7 @@ ds_map_add(global.card_database, "magika",
 		sprite: spr_card_plant_magika,
 		plant_sprite: spr_magika_seedling
     })
-ds_map_add(global.card_database, "pumpkin",
+ds_map_add(global.card_database, plant_cards.PUMPKIN,
     {
         name: "Skull of Ra",
 		category: card_type.PLANT,
@@ -78,7 +107,7 @@ ds_map_add(global.card_database, "pumpkin",
 		sprite: spr_card_plant_pumpkin,
 		plant_sprite: spr_plant_pumpkin
     })
-ds_map_add(global.card_database, "milkyway", 
+ds_map_add(global.card_database, plant_cards.MILKYWAY, 
 	{
         name: "Milkyway",
 		category: card_type.PLANT,
@@ -88,7 +117,7 @@ ds_map_add(global.card_database, "milkyway",
 		sprite: spr_card_plant_milkyway,
 		plant_sprite: spr_milkyway_seedling
     })
-ds_map_add(global.card_database, "shovel", 
+ds_map_add(global.card_database, tool_cards.SHOVEL, 
     {
         name: "Shovel",
 		category: card_type.TOOL,
@@ -100,7 +129,7 @@ ds_map_add(global.card_database, "shovel",
 		plant_sprite: spr_tool_shovel,
 		target: tool_target.EMPTY_TILE
     })
-ds_map_add(global.card_database, "sickle", 
+ds_map_add(global.card_database, tool_cards.SICKLE, 
 	    {
         name: "Sickle",
 		category: card_type.TOOL,
@@ -112,10 +141,22 @@ ds_map_add(global.card_database, "sickle",
 		plant_sprite: spr_tool_sickle,
 		target: tool_target.PLANT
     })
+ds_map_add(global.card_database, tool_cards.WATERING_CAN, 
+	    {
+        name: "Watering Can",
+		category: card_type.TOOL,
+        type: "Tool",
+		element: "Tool",
+        effect: tool_effect.WATERING_CAN,
+        description: "Water your plants.",
+		sprite: spr_card_tool_can,
+		plant_sprite: spr_tool_can,
+		target: tool_target.ANY_TILE
+    })
 	
 	// --- FRUITS --- 
 
-ds_map_add(global.card_database, "golden_peach", 
+ds_map_add(global.card_database, fruit_cards.GOLDEN_PEACH, 
 	    {
         name: "Golden Peach",
 		category: card_type.FRUIT,
@@ -129,7 +170,7 @@ ds_map_add(global.card_database, "golden_peach",
 		target: -1,
 		craft_sprite: spr_craft_fruit_earth
     })
-ds_map_add(global.card_database, "magifruit", 
+ds_map_add(global.card_database, fruit_cards.MAGIFRUIT, 
 	    {
         name: "Magifruit",
 		category: card_type.FRUIT,
@@ -144,7 +185,7 @@ ds_map_add(global.card_database, "magifruit",
 		craft_sprite: spr_craft_fruit_illusion
     })
 
-ds_map_add(global.card_database, "moon_fruit", 
+ds_map_add(global.card_database, fruit_cards.MOONFRUIT, 
 	    {
         name: "Moon Fruit",
 		category: card_type.FRUIT,
@@ -159,7 +200,7 @@ ds_map_add(global.card_database, "moon_fruit",
 		craft_sprite: spr_craft_fruit_moon
     })
 	
-ds_map_add(global.card_database, "bloatkin", 
+ds_map_add(global.card_database, fruit_cards.BLOATKIN, 
 	    {
         name: "Skull of Ra",
 		category: card_type.FRUIT,

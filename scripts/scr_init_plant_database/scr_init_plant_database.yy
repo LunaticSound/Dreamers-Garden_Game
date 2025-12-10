@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_init_plant_database",
   "parent":{
-    "name":"Setup",
-    "path":"folders/Scripts/Setup.yy",
+    "name":"Databases",
+    "path":"folders/Scripts/Setup/Databases.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,8 +1,9 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function game_setup(){
+function game_setup(){	
 global.game_setup = {
-    starting_deck: ["moon_root", "golden_clover", "stardust", "milkyway", "magika", "pumpkin", "sickle", "sickle", "sickle", "shovel", "shovel", "shovel"],
+    starting_deck: [plant_cards.GOLDEN_CLOVER, plant_cards.MILKYWAY, plant_cards.MAGIKA, tool_cards.SHOVEL, tool_cards.SICKLE],
+	// "moon_root", "golden_clover", "stardust", "milkyway", "magika", "pumpkin", "sickle", "sickle", "sickle", "shovel", "shovel", "shovel"],
 	garden_x: room_width/2,
 	garden_y: room_height/4,
     garden_size: [5, 5],
@@ -18,7 +19,7 @@ global.game_setup = {
 	occupied_tiles: 0,
 	plant_number: 0,
 	days: 0,
-	season_length: 18,
+	season_length: 16,
 	temp_range: 58
 	};
 
@@ -63,4 +64,6 @@ global.environment = {
 	heat: 20,
 	rain: 0
 	};
+	
+window_set_cursor(cr_none);
 }

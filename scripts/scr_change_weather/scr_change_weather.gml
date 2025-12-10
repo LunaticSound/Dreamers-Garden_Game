@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function change_weather(){
-	global.environment.heat = round(gauss(global.weather_data[? global.environment.season].temperature_mean, global.weather_data[? global.environment.season].temperature_sd));
+	global.environment.heat = (global.environment.heat + round(gauss(global.weather_data[? global.environment.season].temperature_mean, global.weather_data[? global.environment.season].temperature_sd)))/2;
 	if (irandom(99) < global.weather_data[? global.environment.season].rain_chance){ 
 		global.environment.rain += 1;
 		if (irandom(99) < global.weather_data[? global.environment.season].rain_chance){ 

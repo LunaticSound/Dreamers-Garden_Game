@@ -27,7 +27,10 @@ y_vel *= damping;
 y += y_vel;
 
 if (global.state == game_state.CARD){
-if (active) activate_altar();
+	if (active) activate_altar();
+}
+
+if (global.state == game_state.CRAFT){
 craft_enter();
 }
 

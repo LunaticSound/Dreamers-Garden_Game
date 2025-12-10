@@ -26,11 +26,14 @@ y_vel *= damping;
 // Update position
 y += y_vel;
 
+if (global.state == game_state.CARD){
+	if (active) activate_altar();
+}
+
 if (global.state == game_state.CRAFT){
-if (active) activate_altar();
 craft_enter();
 }
 
 if ((global.state == game_state.RECEIVE)){ 
-	receive_cards(offering_to_pass)
+receive_cards(offering_to_pass)
 }

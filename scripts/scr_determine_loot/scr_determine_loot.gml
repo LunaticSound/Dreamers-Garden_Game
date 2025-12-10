@@ -3,8 +3,16 @@
 function determine_loot(offerings){
     array_sort(offerings, true); // alphabetical
 	var key = string_join_ext("+", offerings);
+	booster = global.booster_database[? key];
+	show_debug_message("Key: " + key);
+	var loot = booster.loot_array;
+	var sprite = booster.sprite;
+	return [loot, sprite];
+}
+		/*
+		
 		switch (key){
-			case "Moon+Moon":
+			case "Moon+Moon+Moon":
 				var loot = choose("moon_root", "milkyway");
 				break;
 			case "Moon+Sun":
@@ -35,7 +43,7 @@ function determine_loot(offerings){
 				var loot = choose("magika");
 				break;
 			case "Tool+Tool":
-				var loot = choose("shovel", "sickle");
+				var loot = choose("shovel", "sickle", "watering_can");
 				break;
 			default:
 				var loot = "sickle";

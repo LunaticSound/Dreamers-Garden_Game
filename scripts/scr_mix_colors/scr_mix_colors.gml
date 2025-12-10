@@ -1,5 +1,6 @@
 /// @function mix_colors(color_list)
 /// @param color_list DS list or array containing strings
+
 function mix_colors(color_list)
 {
     var count = array_length(color_list);

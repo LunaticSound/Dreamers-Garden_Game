@@ -3,9 +3,21 @@
 
 draw_self();
 
-if(mid_sprite != -1) draw_sprite(mid_sprite, 0, x + 440, y + 338);
-if(left_sprite != -1) draw_sprite(left_sprite, 0, x + 220, y + 460);
-if(right_sprite != -1) draw_sprite(right_sprite, 0, x + 650, y + 465);
+if(mid_sprite != -1){ 
+	draw_sprite(mid_sprite, 0, x + 440, y + 338);
+	draw_text(x + 440, y + 238, string(offering[0]))
+}
+
+if(right_sprite != -1){
+	draw_sprite(right_sprite, 0, x + 650, y + 465);
+		draw_text(x + 650, y + 238, string(offering[1]))
+}
+
+if(left_sprite != -1){ 
+	draw_sprite(left_sprite, 0, x + 220, y + 460);
+		draw_text(x + 220, y + 238, string(offering[2]))
+}
+
 
 draw_set_colour(c_yellow);
 if(show_mid) draw_circle(x + 440, y + 338, 100, false);

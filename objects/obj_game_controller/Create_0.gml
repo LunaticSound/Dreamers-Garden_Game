@@ -8,16 +8,25 @@ init_card_database();
 init_ground_database();
 init_plant_database();
 init_weather_database();
+init_booster_database();
+
 global.garden_plant_list = ds_list_create();
 global.grid_node_instances = create_garden_grid(global.game_setup.garden_size[0],global.game_setup.garden_size[1], global.game_setup.tile_size);
 altar_cards = [];
 forge_cards = [];
+rotate_wheel = 0;
 
 setup_seasons_wheel_glow();
 wheel_rotation = 0;
+moon_rotation = 0;
+wheel_rotation_target = 0;
+moon_rotation_target = 0;
+
 
 cursor = false;
 day_end_index = 0;
+draw_sun = true;
+sun_image_index = 0;
 
 global.selected_card = -1; // -1 = no card selected
 global.selected_card_object = -1;
@@ -56,3 +65,6 @@ shuffle_deck();
 //draw_hand(5); // Draw 5 cards to start
 to_draw = 4;
 alarm[0] = 3;
+
+image_xscale = 0.5;
+image_yscale = 0.5;

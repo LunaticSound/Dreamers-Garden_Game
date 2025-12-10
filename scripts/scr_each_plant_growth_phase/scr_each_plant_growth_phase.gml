@@ -34,12 +34,12 @@ function each_plant_growth_phase(){
 			if(age_in_days >= plant_data.days_to_grow){
 				if (!hot && !cold && (vitality < plant_data.max_vitality)){ 
 					vitality += 1;
-					effect_create_depth(depth, ef_star, x, y - 100, 1, c_lime)
+					image_blend = c_green;
 				}
 			} else {
 				if (!thirsty && !hot && !cold && (vitality < floor(plant_data.max_vitality / 2) + 1)){ 
 					vitality += 1;
-					effect_create_depth(depth, ef_star, x, y - 100, 1, c_lime)
+					image_blend = c_green;
 				}
 			}
 			if (age_in_days >= plant_data.days_to_grow) plant_state = plant_states.REGULAR;
@@ -49,7 +49,7 @@ function each_plant_growth_phase(){
 			calculate_dots_display();
 			calculate_temp_values(underlying_tile);
 			sprite_index = plant_data.plant_sprite[plant_state];
-			if (plant_state == plant_states.REGULAR or plant_state ==  plant_states.SPLENDID){ 
+			if (age_in_days >= plant_data.days_to_grow && (plant_state == plant_states.REGULAR or plant_state ==  plant_states.SPLENDID)){ 
 				ripe_count += 1;
 				if (ripe_count == plant_data.days_until_ripe) fruit_ripe = true;
 			}
@@ -62,6 +62,7 @@ function each_plant_growth_phase(){
 		growth_phase_done = true;
 		growth_phase_process = false;
 		life_set = false;
+		image_blend = c_white;
 		growth_phase_counter = 0;
 		growth_phase_duration = 30 - ds_list_size(global.garden_plant_list);
 		}

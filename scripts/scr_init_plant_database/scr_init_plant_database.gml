@@ -11,16 +11,10 @@ enum plant_effects{
 	HARM
 }
 
-enum material{
-	DEADWOOD,
-	RADIANT_ROOT,
-	MIRRORGLAS,
-	MOONSTONE
-}
 
 global.plant_database = ds_map_create();
 
-ds_map_add(global.plant_database, "stardust",   
+ds_map_add(global.plant_database, plant_cards.STARDUST,  
 		{
         name: "Stardust",
         type: "Flower",
@@ -62,7 +56,7 @@ ds_map_add(global.plant_database, "stardust",
 		flicker_speed: game_get_speed(gamespeed_fps) / 2 //higher values mean slower flickering
     });
 
-ds_map_add(global.plant_database, "moon_root",
+ds_map_add(global.plant_database, plant_cards.MOON_ROOT,
     {
         id: 1,
         name: "Moon Root",
@@ -86,7 +80,7 @@ ds_map_add(global.plant_database, "moon_root",
 		glow_sprite: spr_glow_blue_seed,
 		plant_sprite: [spr_moon_root_seedling, spr_moon_root, spr_moon_root_lavish, spr_moon_root_sick, spr_moon_root_dead],
         fruit_sprite: -1,
-		fruit_card: "moon_fruit",
+		fruit_card: fruit_cards.MOONFRUIT,
 		fruit_card_n: 1,
 		material_card: material.MOONSTONE,
 		fruit_x: 0, 
@@ -101,7 +95,7 @@ ds_map_add(global.plant_database, "moon_root",
 		flicker_factor: 0.02,
 		flicker_speed: game_get_speed(gamespeed_fps)
     })
-ds_map_add(global.plant_database, "golden_clover",
+ds_map_add(global.plant_database, plant_cards.GOLDEN_CLOVER,
     {
         id: 2,
         name: "Golden Clover",
@@ -115,7 +109,7 @@ ds_map_add(global.plant_database, "golden_clover",
 		max_vitality: 8,
 		nutritiousness: 4,
 		perennial: true,
-		heat_pref: 16,
+		heat_pref: 24,
 		heat_tol: 10,
 		water_pref: 6,
 		water_tol: 3,
@@ -125,7 +119,7 @@ ds_map_add(global.plant_database, "golden_clover",
 		glow_sprite: spr_glow_sprite_400x400,
 		plant_sprite: [spr_golden_clover_seedling, spr_golden_clover_regular, spr_golden_clover_lavish, spr_golden_clover_sick, spr_golden_clover_dead],
         fruit_sprite: spr_fruit_golden_clover,
-		fruit_card: "golden_peach",
+		fruit_card: fruit_cards.GOLDEN_PEACH,
 		fruit_card_n: 1,
 		material_card: material.DEADWOOD,
 		fruit_x: 40, 
@@ -138,7 +132,7 @@ ds_map_add(global.plant_database, "golden_clover",
 		flicker_factor: 0,
 		flicker_speed: game_get_speed(gamespeed_fps)/4
     })
-ds_map_add(global.plant_database, "magika",
+ds_map_add(global.plant_database, plant_cards.MAGIKA,
 	{
 		id: 3,
         name: "Magika",
@@ -163,7 +157,7 @@ ds_map_add(global.plant_database, "magika",
 		glow_sprite: spr_glow_sprite_400x400,
 		plant_sprite: [spr_magika_seedling, spr_magika_regular, spr_magika_lavish, spr_magika_sick, spr_magika_dead],
         fruit_sprite: spr_fruit_magika,
-		fruit_card: "magifruit",
+		fruit_card: fruit_cards.MAGIFRUIT,
 		fruit_card_n: 1,
 		material_card: material.MIRRORGLAS,
 		fruit_x: 25, 
@@ -178,7 +172,7 @@ ds_map_add(global.plant_database, "magika",
 		flicker_factor: 0,
 		flicker_speed: game_get_speed(gamespeed_fps)/4
     })
-ds_map_add(global.plant_database, "pumpkin",
+ds_map_add(global.plant_database, plant_cards.PUMPKIN,
 	{
 		id: 4,
         name: "Skull of Amun",
@@ -201,7 +195,7 @@ ds_map_add(global.plant_database, "pumpkin",
 		glow_sprite: spr_glow_sprite_400x400,
 		plant_sprite: [spr_pumpkin_seedling, spr_pumpkin_regular, spr_pumpkin_lavish, spr_pumpkin_sick, spr_pumpkin_dead],
 		fruit_sprite: -1,
-		fruit_card: "bloatkin",
+		fruit_card: fruit_cards.BLOATKIN,
 		fruit_card_n: 1,
 		material_card: material.RADIANT_ROOT,
 		fruit_x: x, 
@@ -216,7 +210,7 @@ ds_map_add(global.plant_database, "pumpkin",
 		flicker_factor: 0,
 		flicker_speed: game_get_speed(gamespeed_fps)/4
     })
-ds_map_add(global.plant_database, "milkyway",
+ds_map_add(global.plant_database, plant_cards.MILKYWAY,
 	{
 		id: 5,
         name: "Milkyway",
