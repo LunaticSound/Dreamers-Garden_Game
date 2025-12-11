@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function game_setup(){	
 global.game_setup = {
-    starting_deck: [plant_cards.GOLDEN_CLOVER, plant_cards.MILKYWAY, plant_cards.MAGIKA, tool_cards.SHOVEL, tool_cards.SICKLE],
+    starting_deck: [plant_cards.GOLDEN_CLOVER, plant_cards.MILKYWAY, plant_cards.MAGIKA, tool_cards.SHOVEL, tool_cards.SICKLE, plant_cards.MANYSOUL_GRAIN],
 	// "moon_root", "golden_clover", "stardust", "milkyway", "magika", "pumpkin", "sickle", "sickle", "sickle", "shovel", "shovel", "shovel"],
 	garden_x: room_width/2,
 	garden_y: room_height/4,

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_init_unlock_database",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_init_unlock_database",
+  "parent":{
+    "name":"Databases",
+    "path":"folders/Scripts/Setup/Databases.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

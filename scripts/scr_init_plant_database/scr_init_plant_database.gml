@@ -8,7 +8,8 @@ enum particle_type{
 
 enum plant_effects{
 	CHANGE_HEAT,
-	HARM
+	HARM,
+	GREGARIOUSNESS
 }
 
 
@@ -58,7 +59,6 @@ ds_map_add(global.plant_database, plant_cards.STARDUST,
 
 ds_map_add(global.plant_database, plant_cards.MOON_ROOT,
     {
-        id: 1,
         name: "Moon Root",
         type: "Plant",
         effect: -1,
@@ -97,7 +97,6 @@ ds_map_add(global.plant_database, plant_cards.MOON_ROOT,
     })
 ds_map_add(global.plant_database, plant_cards.GOLDEN_CLOVER,
     {
-        id: 2,
         name: "Golden Clover",
         type: "Plant - Perennial",
         effect: -1,
@@ -134,7 +133,6 @@ ds_map_add(global.plant_database, plant_cards.GOLDEN_CLOVER,
     })
 ds_map_add(global.plant_database, plant_cards.MAGIKA,
 	{
-		id: 3,
         name: "Magika",
         type: "Plant - Perennial",
         effect: plant_effects.HARM,
@@ -174,7 +172,6 @@ ds_map_add(global.plant_database, plant_cards.MAGIKA,
     })
 ds_map_add(global.plant_database, plant_cards.PUMPKIN,
 	{
-		id: 4,
         name: "Skull of Amun",
         type: "Plant",
         effect: -1,
@@ -212,7 +209,6 @@ ds_map_add(global.plant_database, plant_cards.PUMPKIN,
     })
 ds_map_add(global.plant_database, plant_cards.MILKYWAY,
 	{
-		id: 5,
         name: "Milkyway",
         type: "Fruit",
         effect: plant_effects.CHANGE_HEAT,
@@ -248,4 +244,43 @@ ds_map_add(global.plant_database, plant_cards.MILKYWAY,
 		flicker_factor: 0,
 		flicker_speed: game_get_speed(gamespeed_fps)/4
     });
+	
+ds_map_add(global.plant_database, plant_cards.MANYSOUL_GRAIN,
+	{
+        name: "Manysoul Grain",
+        type: "Weed",
+        effect: plant_effects.GREGARIOUSNESS,
+		effect_strength: 1,
+		effect_radius: "3x3",
+		description: "It grows faster and stronger when it is not alone. Just like us.",
+		days_until_ripe: 6,
+		days_to_grow: 4,
+		max_vitality: 5,
+		nutritiousness: 5,
+		perennial: true,
+		heat_pref: 30,
+		heat_tol: 10,
+		water_pref: 6,
+		water_tol: 3,
+		water_intake: 2,
+		nutrient_intake: 2,
+		glow_sprite: -1,
+		plant_sprite: [spr_manysoul_grain_seedling, spr_manysoul_grain_regular, spr_manysoul_grain_lavish, spr_manysoul_grain_sick, spr_manysoul_grain_dead],
+		fruit_sprite: spr_fruit_golden_clover,
+		fruit_card: fruit_cards.GOLDEN_PEACH,
+		fruit_card_n: 1,
+		material_card: material.MOONSTONE,
+		fruit_x: x, 
+		fruit_y: y,
+		fruit_wiggle: 15,
+		particle: -1,
+        glow_points: [
+        ],
+		glow_size: 1.1,
+		glow_strength: 0.2,
+		pulse_strength: 0.002,
+		flicker_factor: 0,
+		flicker_speed: game_get_speed(gamespeed_fps)/4
+    });
+	
 }

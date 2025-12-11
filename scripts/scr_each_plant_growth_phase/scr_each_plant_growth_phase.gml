@@ -30,7 +30,10 @@ function each_plant_growth_phase(){
 			} else{ 
 				hot = false;
 				}
-			if (plant_state != plant_states.SICK) age_in_days += 1;
+			if (plant_state != plant_states.SICK){ 
+				age_in_days += 1;
+				if (plant_data.effect == plant_effects.GREGARIOUSNESS) gregariousness(gx, gy, plant_data.effect_radius, plant_data.effect_strength);
+			}
 			if(age_in_days >= plant_data.days_to_grow){
 				if (!hot && !cold && (vitality < plant_data.max_vitality)){ 
 					vitality += 1;

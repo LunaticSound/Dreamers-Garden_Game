@@ -29,7 +29,11 @@ enum plant_cards {
 	GOLDEN_CLOVER,
 	MAGIKA,
 	PUMPKIN,
-	MILKYWAY
+	MILKYWAY,
+	MANYSOUL_GRAIN,
+	NIGHTSHADE_GINGKO, 
+	PURPLE_SNAIL,
+	WATER_OMEN
 	}
 
 enum tool_cards {
@@ -110,6 +114,46 @@ ds_map_add(global.card_database, plant_cards.PUMPKIN,
 ds_map_add(global.card_database, plant_cards.MILKYWAY, 
 	{
         name: "Milkyway",
+		category: card_type.PLANT,
+        type: "Plant",
+		element: "Moon",
+        description: "Its spiraling leaves provide a breeze of fresh air to surrounding plants.",
+		sprite: spr_card_plant_milkyway,
+		plant_sprite: spr_milkyway_seedling
+    })
+ds_map_add(global.card_database, plant_cards.MANYSOUL_GRAIN, 
+	{
+        name: "Manysoul Grain",
+		category: card_type.PLANT,
+        type: "Weed",
+		element: "Earth",
+        description: "- 1 day until ripe for every other weed around it.",
+		sprite: spr_card_plant_milkyway_1,
+		plant_sprite: spr_milkyway_seedling
+    })
+ds_map_add(global.card_database, plant_cards.WATER_OMEN, 
+	{
+        name: "Water Omen",
+		category: card_type.PLANT,
+        type: "Sun",
+		element: "Moon",
+        description: "Harvest: Next day will be rainy.",
+		sprite: spr_card_plant_milkyway,
+		plant_sprite: spr_milkyway_seedling
+    })
+ds_map_add(global.card_database, plant_cards.PURPLE_SNAIL, 
+	{
+        name: "Purple Snail",
+		category: card_type.PLANT,
+        type: "Plant",
+		element: "Illusion",
+        description: "Its spiraling leaves provide a breeze of fresh air to surrounding plants.",
+		sprite: spr_card_plant_milkyway,
+		plant_sprite: spr_milkyway_seedling
+    })
+ds_map_add(global.card_database, plant_cards.NIGHTSHADE_GINGKO, 
+	{
+        name: "Nightshade Gingko",
 		category: card_type.PLANT,
         type: "Plant",
 		element: "Moon",

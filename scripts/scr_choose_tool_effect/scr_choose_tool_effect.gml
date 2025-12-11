@@ -10,5 +10,6 @@ function choose_tool_effect(nearest_node){
 			break;
 		case tool_effect.WATERING_CAN:
 			tool_watering_can(nearest_node);
+			break;
 	}
 }

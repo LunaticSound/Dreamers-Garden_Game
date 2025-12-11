@@ -4,10 +4,9 @@ function determine_loot(offerings){
     array_sort(offerings, true); // alphabetical
 	var key = string_join_ext("+", offerings);
 	booster = global.booster_database[? key];
-	show_debug_message("Key: " + key);
-	var loot = booster.loot_array;
+//	var loot = booster.loot_array;
 	var sprite = booster.sprite;
-	return [loot, sprite];
+	return [booster, sprite];
 }
 		/*
 		

@@ -1,6 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function growth_phase() {
+	
+	with(obj_garden_plant) plant_data.days_until_ripe = global.plant_database[? plant_id].days_until_ripe;
 
     // End day if finished
     if (day_end_index >= ds_list_size(global.garden_plant_list)) {

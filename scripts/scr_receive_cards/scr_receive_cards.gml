@@ -7,6 +7,7 @@ if (!loot_spawned){
 				var loot = determine_loot(offerings);
 				var inst = instance_create_depth(room_width/2, room_height/2, -5000, obj_booster);
 				inst.loot = loot[0];
+//				booster_draw_card(loot);
 				inst.sprite_index = loot[1];
 				inst.controller = id;
 		}

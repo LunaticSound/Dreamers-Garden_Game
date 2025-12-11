@@ -8,9 +8,7 @@ move_altar();
 weather_effects();
 
 if (global.state == game_state.PLANT) plant_phase();
-if (global.state == game_state.TOOL){ 
-	tool_phase();
-}
+if (global.state == game_state.TOOL) tool_phase();
 if (global.state == game_state.GROW) growth_phase();
 if (mouse_check_button_pressed(mb_left)) card_clicked();
 

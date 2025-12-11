@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_booster_draw_card",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_booster_draw_card",
+  "parent":{
+    "name":"Crafting",
+    "path":"folders/Scripts/Crafting.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

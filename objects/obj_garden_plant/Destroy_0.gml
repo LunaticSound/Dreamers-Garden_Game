@@ -6,4 +6,7 @@ switch (plant_data.effect){
 		change_heat(gx, gy, plant_data.effect_radius, -plant_data.effect_strength);
 	case plant_effects.HARM:
 	
+	case plant_effects.GREGARIOUSNESS:
+	gregariousness(gx, gy, plant_data.effect_radius, -plant_data.effect_strength);
+	
 }

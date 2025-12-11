@@ -64,12 +64,20 @@ function card_clicked(){
 											with (global.plant_sprite){
 												sprite_index = other.card_data.plant_sprite;
 												visible = true;
-											}
+											} 
 											global.state = game_state.TOOL;
 										} else {
 											card_refuse();
 										}
 									break;
+									case tool_target.ANY_TILE:
+											visible = false;
+											with (global.plant_sprite){
+												sprite_index = other.card_data.plant_sprite;
+												visible = true;
+											}
+											global.state = game_state.TOOL;
+
 									}
 								break;
 								
