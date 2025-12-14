@@ -29,4 +29,4 @@ left_y = y + 490;
 right_x = x + 650;
 right_y = y + 465;
 
-button = instance_create_depth(0, y + 400, global.game_setup.card_layer_depth, obj_button_altar);
+button = instance_create_depth(0, y + 245, global.game_setup.card_layer_depth, obj_button_altar);

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_find_shoveled_tile",
   "parent":{
-    "name":"Garden",
-    "path":"folders/Scripts/Garden.yy",
+    "name":"Tool Phase",
+    "path":"folders/Scripts/Garden/Tool Phase.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

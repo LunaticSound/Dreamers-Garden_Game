@@ -41,6 +41,3 @@ if(instance_exists(global.selected_card_object)){
 		}
 	}
 }
-
-sun_image_index += 0.1;
-if (sun_image_index == 27) sun_image_index = 0;

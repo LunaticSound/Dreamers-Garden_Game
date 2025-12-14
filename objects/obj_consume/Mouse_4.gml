@@ -23,3 +23,5 @@ with(obj_game_controller){
 	forge.show_mid = false;
 	forge.show_right = false;
 }
+
+global.state = game_state.CARD;

@@ -1,8 +1,24 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+enum tool_displays{
+	WATERING_CAN
+}
+
+enum game_state {
+    CARD,   // selecting and handling cards
+    PLANT,   // placing the chosen plant
+	TOOL,    // using tools
+	GROW,
+	END_DAY,
+	RECEIVE,
+	CRAFT,
+	SHOW_CARD
+}
+
 function game_setup(){	
 global.game_setup = {
-    starting_deck: [plant_cards.GOLDEN_CLOVER, plant_cards.MILKYWAY, plant_cards.MAGIKA, tool_cards.SHOVEL, tool_cards.SICKLE, plant_cards.MANYSOUL_GRAIN],
+    starting_deck: [plant_cards.MOON_ROOT, tool_cards.WATERING_CAN, plant_cards.GOLDEN_CLOVER, plant_cards.MILKYWAY, plant_cards.MAGIKA, tool_cards.SHOVEL, tool_cards.SICKLE, plant_cards.MANYSOUL_GRAIN],
 	// "moon_root", "golden_clover", "stardust", "milkyway", "magika", "pumpkin", "sickle", "sickle", "sickle", "shovel", "shovel", "shovel"],
 	garden_x: room_width/2,
 	garden_y: room_height/4,
@@ -20,7 +36,8 @@ global.game_setup = {
 	plant_number: 0,
 	days: 0,
 	season_length: 16,
-	temp_range: 58
+	temp_range: 58,
+	tool_display: -1
 	};
 
 global.player = {
@@ -30,8 +47,7 @@ global.player = {
     deck: ds_list_create(),
     hand: ds_list_create(),
     discard: ds_list_create(),
-	hand_objects: ds_list_create(),
-	unlocked_cards: [0, 1]
+	hand_objects: ds_list_create()
 };
 
 enum plant_states {

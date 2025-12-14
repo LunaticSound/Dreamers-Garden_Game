@@ -12,4 +12,5 @@ function choose_tool_effect(nearest_node){
 			tool_watering_can(nearest_node);
 			break;
 	}
+	global.plant_sprite.draw_tool = false;
 }

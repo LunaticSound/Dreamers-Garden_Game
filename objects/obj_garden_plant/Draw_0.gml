@@ -6,7 +6,7 @@ draw_sprite_ext(sprite_index, image_index, x, y, draw_scale, draw_scale, 1, c_wh
 
 
 if(growth_phase_process){
-	draw_sprite_ext(spr_overlay_plant_gui, 0, x, y, 0.5, 0.5, 1, c_white, 1)
+//	draw_sprite_ext(spr_overlay_plant_gui, 0, x, y, 0.5, 0.5, 1, c_white, 1)
 	if(hot) draw_sprite_ext(spr_overlay_hot, 0, x, y- 100, 1/30 * growth_phase_counter, 1/30 * growth_phase_counter, 1, c_white, 1- (growth_phase_counter / 40));
 	if (cold) draw_sprite_ext(spr_overlay_cold, 0, x, y- 100, 1/30 * growth_phase_counter, 1/30 * growth_phase_counter, 1, c_white, 1- (growth_phase_counter / 40));
 }

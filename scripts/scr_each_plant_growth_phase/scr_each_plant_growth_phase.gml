@@ -54,7 +54,7 @@ function each_plant_growth_phase(){
 			sprite_index = plant_data.plant_sprite[plant_state];
 			if (age_in_days >= plant_data.days_to_grow && (plant_state == plant_states.REGULAR or plant_state ==  plant_states.SPLENDID)){ 
 				ripe_count += 1;
-				if (ripe_count == plant_data.days_until_ripe) fruit_ripe = true;
+				if (plant_data.fruit_card != -1 && ripe_count >= days_until_ripe) fruit_ripe = true;
 			}
 			life_set = true;
 		}

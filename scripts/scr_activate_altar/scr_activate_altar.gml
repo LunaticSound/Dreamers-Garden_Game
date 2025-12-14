@@ -10,7 +10,7 @@ function activate_altar(){
 		right_sprite = -1;
 			offering_to_pass[0] = offering[0];
 			offering_to_pass[1] = offering[1];
-			if (array_length(offering_to_pass) > 2) offering_to_pass[2] = offering[2];
+			if (array_length(offering) > 2) offering_to_pass[2] = offering[2];
 offering = [];
 //			offering[0] = -1;
 //			offering[1] = -1;

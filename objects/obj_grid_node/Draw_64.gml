@@ -15,24 +15,29 @@ if (global.state == game_state.CARD or global.state == game_state.TOOL){
 		draw_set_alpha(1);
 	}
 */
-
-	if (inhabitant != -1 && hover && !clicked){
-		draw_sprite(spr_overlay_plant_stats, 0, x, y);
-		draw_sprite_ext(spr_overlay_water, water_stored, x, y - 95, 0.4, 0.4, 1, c_white, 1);
-		draw_sprite(spr_overlay_plant_gui, 0, x, y - 50);
-		draw_sprite(spr_overlay_plant_form, inhabitant.plant_state, x, y-50)
-		draw_sprite_ext(spr_overlay_temp_range, 0, x + inhabitant.x_window, y + 16, inhabitant.x_scale_window, 0.4, 1, c_white, 1);
-		draw_sprite_ext(spr_overlay_temp, 0, x + inhabitant.x_heat_marker, y + 16, 0.5, 0.5, 1, c_white, 1);
-		// draw growth markers          
-		draw_set_colour(c_black);
-		for (i = 0; i < array_length(inhabitant.dots_to_draw); i++){
-			draw_circle(inhabitant.dots_to_draw[i], y - 6, 5, false)
-		}						
-		draw_set_colour(c_white);
-		draw_circle(inhabitant.days_grown_x, y - 6, 4, false)
+switch global.state{
+	case game_state.CARD:
+		if (inhabitant != -1 && hover && !clicked){
+			draw_sprite(spr_overlay_plant_stats, 0, x, y);
+			draw_sprite_ext(spr_overlay_water, water_stored, x, y - 95, 0.4, 0.4, 1, c_white, 1);
+			draw_sprite(spr_overlay_plant_gui, 0, x, y - 50);
+			draw_sprite(spr_overlay_plant_form, inhabitant.plant_state, x, y-50)
+			draw_sprite_ext(spr_overlay_temp_range, 0, x + inhabitant.x_window, y + 16, inhabitant.x_scale_window, 0.4, 1, c_white, 1);
+			draw_sprite_ext(spr_overlay_temp, 0, x + inhabitant.x_heat_marker, y + 16, 0.5, 0.5, 1, c_white, 1);
+			// draw growth markers          
+			draw_set_colour(c_black);
+			for (i = 0; i < array_length(inhabitant.dots_to_draw); i++){
+				draw_circle(inhabitant.dots_to_draw[i], y - 6, 5, false)
+			}						
+			draw_set_colour(c_white);
+			draw_circle(inhabitant.days_grown_x, y - 6, 4, false)
+			if(inhabitant.fruit_ripe) draw_circle(inhabitant.x + 95, y - 55, 4, false)
 		
-		// draw vitality marker
-		draw_set_colour(c_lime);
-		draw_circle(inhabitant.vit_dot_x, y - 24, 4, false);
+			// draw vitality marker
+			draw_set_colour(c_lime);
+			draw_circle(inhabitant.vit_dot_x, y - 24, 4, false);
+		}
 	}
+		// if (global.game_setup.tool_display == 0 && hover){
+
 }

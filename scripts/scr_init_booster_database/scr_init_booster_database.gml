@@ -207,4 +207,17 @@ ds_map_add(global.booster_database, "Tool+Tool",
 			{ rarity: "legendary", weight:  2, cards: [12] } */
 		]
     });
+	
+ds_map_add(global.booster_database, "Tool+Tool+Tool",  
+		{
+        name: "Tools",
+		sprite: spr_booster_superearth,
+		loot_pools: [
+			{ rarity: "common",    weight: 65, cards: [tool_cards.SHOVEL, tool_cards.SICKLE, tool_cards.WATERING_CAN] },
+			{ rarity: "uncommon",  weight: 25, cards: [tool_cards.WATERING_CAN] },
+			/* { rarity: "rare",      weight:  8, cards: [10,11] },
+			{ rarity: "legendary", weight:  2, cards: [12] } */
+		]
+    });
+
 }

@@ -17,8 +17,8 @@ function calculate_dots_display(){
         var current_index = age_in_days;
     } else {
 		draw_scale = 1;
-        total_days = plant_data.days_until_ripe;
-        var current_index = clamp(ripe_count, 0, plant_data.days_until_ripe - 1);
+        total_days = days_until_ripe;
+        var current_index = clamp(ripe_count, 0, days_until_ripe - 1);
     }
 
     var width = 80;

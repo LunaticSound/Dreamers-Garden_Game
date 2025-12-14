@@ -58,6 +58,7 @@ function plant_phase() {
         with (new_plant) {
 	        plant_id = global.selected_card;
             plant_data = global.plant_database[? plant_id];
+			days_until_ripe = plant_data.days_until_ripe;
 			vitality = floor(plant_data.max_vitality / 2);
             age_in_days = 0;
             ripe = false;
@@ -73,13 +74,13 @@ function plant_phase() {
 			water_set = false;
 			underlying_tile = nearest_node;
 			calculate_temp_values(nearest_node);
-			calculate_dots_display();
 			switch(plant_data.effect){
 				case plant_effects.CHANGE_HEAT:
 				change_heat(gx, gy, plant_data.effect_radius, plant_data.effect_strength)	
 				case plant_effects.GREGARIOUSNESS:
 				gregariousness(gx, gy, plant_data.effect_radius, plant_data.effect_strength)
 			}
+			calculate_dots_display();
 			choose_particle();
             ds_list_add(global.garden_plant_list, id);
             }

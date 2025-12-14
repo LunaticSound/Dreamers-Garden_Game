@@ -128,8 +128,8 @@ ds_map_add(global.card_database, plant_cards.MANYSOUL_GRAIN,
         type: "Weed",
 		element: "Earth",
         description: "- 1 day until ripe for every other weed around it.",
-		sprite: spr_card_plant_milkyway_1,
-		plant_sprite: spr_milkyway_seedling
+		sprite: spr_card_plant_manysoul,
+		plant_sprite: spr_manysoul_grain_seedling
     })
 ds_map_add(global.card_database, plant_cards.WATER_OMEN, 
 	{

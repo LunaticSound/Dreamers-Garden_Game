@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_move_altar",
   "parent":{
-    "name":"Game Mechanics",
-    "path":"folders/Scripts/Game Mechanics.yy",
+    "name":"Crafting",
+    "path":"folders/Scripts/Crafting.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

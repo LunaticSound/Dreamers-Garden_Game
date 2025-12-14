@@ -16,7 +16,7 @@ if (show_mid){
                     ds_list_delete(global.player.hand, i);
                     global.selected_card = -1;
                     update_card_positions();
-					global.state = game_state.CARD;
+					alarm[0] = 1;
                     break;
                 }
 			}
@@ -42,7 +42,7 @@ if (show_right){
                     ds_list_delete(global.player.hand, i);
                     global.selected_card = -1;
                     update_card_positions();
-					global.state = game_state.CARD;
+					alarm[0] = 1;
                     break;
                 }
 			}
@@ -69,7 +69,7 @@ if (show_left){
                     ds_list_delete(global.player.hand, i);
                     global.selected_card = -1;
                     update_card_positions();
-					global.state = game_state.CARD;
+					alarm[0] = 1;
                     break;
                 }
 			}

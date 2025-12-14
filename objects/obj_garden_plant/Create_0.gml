@@ -19,6 +19,7 @@ draw_feedback = false;
 dots_to_draw = [];
 draw_scale = 0.5;
 plant_state = plant_states.SEEDLING;
+fruit_dot = false;
 
 
 

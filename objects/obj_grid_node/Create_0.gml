@@ -10,3 +10,4 @@ black_alpha = 0;
 black_alpha_target = 0.6;
 clicked = true;
 water_stored = 6;
+draw_tool = false;

@@ -6,7 +6,7 @@
   "name":"scr_tool_sickle",
   "parent":{
     "name":"Tool effects",
-    "path":"folders/Scripts/Garden/Tool effects.yy",
+    "path":"folders/Scripts/Garden/Tool Phase/Tool effects.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

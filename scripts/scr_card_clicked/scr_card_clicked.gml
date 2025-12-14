@@ -76,6 +76,9 @@ function card_clicked(){
 												sprite_index = other.card_data.plant_sprite;
 												visible = true;
 											}
+											if (global.selected_card == tool_cards.WATERING_CAN){ 
+												global.game_setup.tool_display = tool_displays.WATERING_CAN;
+											}
 											global.state = game_state.TOOL;
 
 									}

@@ -17,7 +17,7 @@ if (mouse_check_button_pressed(mb_left)){
 			forge.button.x += 400;
 		}
 	}}else{
-		if(altar.centered){
+		if(altar.centered && global.state != game_state.CRAFT){
 			altar.target_x -= 1000;
 			altar.centered = false;
 			altar.button.visible = true;
@@ -38,7 +38,7 @@ if (instance_position(mouse_x, mouse_y, obj_button_forge)){
 			altar.button.x += 400;
 		}
 	}}else{
-		if(forge.centered){
+		if(forge.centered && global.state != game_state.CRAFT){
 			forge.target_x -= 1000;
 			forge.centered = false;
 			forge.button.visible = true;

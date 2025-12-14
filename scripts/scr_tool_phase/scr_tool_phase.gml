@@ -7,10 +7,13 @@ function tool_phase(){
 				global.plant_sprite.visible = false;
 				with (global.selected_card_object) { visible = true; }
 				// global.state = game_state.CARD;
+				global.game_setup.tool_display = -1;
 				return;
 			}else if(!position_meeting(mouse_x, mouse_y, obj_grid_node)){
 				global.plant_sprite.visible = false;
+				global.game_setup.tool_display = -1;
 				with (global.selected_card_object) { visible = true; }
+				global.tool_display = -1;
 				global.state = game_state.CARD;
 			}
         // Check if mouse is over a visible card
@@ -21,6 +24,7 @@ function tool_phase(){
                     // Card is visible, handle deselection
                     with (global.plant_sprite) { visible = false; }
                     with (global.selected_card_object) { visible = true; }
+					global.game_setup.tool_display = -1;
                     global.state = game_state.CARD;
                     return;
 					}
@@ -33,12 +37,14 @@ function tool_phase(){
 				}*/
             }
         }
-		switch (global.card_database[? global.selected_card].target){
+				switch (global.card_database[? global.selected_card].target){
 					case tool_target.EMPTY_TILE:
-					var nearest_node = find_empty_node(mouse_x, mouse_y)
+					var nearest_node = find_empty_node(mouse_x, mouse_y);
+					global.plant_sprite.water_stored = nearest_node.water_stored;
 					break;			
 					case tool_target.ANY_TILE:
 					var nearest_node = instance_nearest(mouse_x, mouse_y, obj_grid_node)
+					global.plant_sprite.water_stored = nearest_node.water_stored;
 					break;
 					case tool_target.PLANT:
 					var nearest_node = instance_nearest(mouse_x, mouse_y, obj_garden_plant)
@@ -48,6 +54,10 @@ function tool_phase(){
 		var grid_y = nearest_node.y;
 		global.plant_sprite.x = grid_x;
 		global.plant_sprite.y = grid_y;
+		global.plant_sprite.draw_tool = true;
+		
+		if(position_meeting(mouse_x, mouse_y, obj_grid_node)) global.plant_sprite.visible = true
+		else global.plant_sprite.visible = false;
 
 		        // Create or update the plant sprite instance
         if ((mouse_check_button_pressed(mb_left)) && (position_meeting(mouse_x, mouse_y, obj_grid_node))){
@@ -62,6 +72,7 @@ function tool_phase(){
 						ds_list_add(global.player.discard, global.selected_card);
 						global.selected_card = -1;
 						update_card_positions();
+						global.tool_display = -1;
 						global.state = game_state.CARD;
 						break; // Exit the loop after finding the card
 				}

@@ -2,6 +2,8 @@
 // You can write your code in this editor
 // Initialize player data
 
+show_debug_overlay(true); 
+
 game_setup();
 randomise();
 init_card_database();
@@ -38,17 +40,6 @@ forge = instance_create_depth(-800, 150, global.game_setup.altar_layer_depth, ob
 consume = instance_create_depth(room_width, 150, global.game_setup.altar_layer_depth, obj_consume);
 with(consume){
 	game_controller = other.id}
-
-enum game_state {
-    CARD,   // selecting and handling cards
-    PLANT,   // placing the chosen plant
-	TOOL,    // using tools
-	GROW,
-	END_DAY,
-	RECEIVE,
-	CRAFT,
-	SHOW_CARD
-}
 
 global.state = game_state.CARD;
 

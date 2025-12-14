@@ -3,4 +3,5 @@
 
 function tool_watering_can(node_passed){
 	with(node_passed) water_stored = clamp(water_stored + 3, 0, 6);
+	global.game_setup.tool_display = -1;
 }
