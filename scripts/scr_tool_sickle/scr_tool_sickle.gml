@@ -3,7 +3,7 @@
 function tool_sickle(plant_passed){
 	with(plant_passed){
 		if(!fruit_ripe or !plant_data.perennial){
-			add_card(plant_data.material_card, 1)
+			// add_card(plant_data.material_card, 1)
 			underlying_tile.occupied = false;
 			global.game_setup.empty_tiles += 1;
 			global.game_setup.plant_number -=1;
@@ -24,7 +24,7 @@ function tool_sickle(plant_passed){
 			instance_destroy();
 		}
 		if(fruit_ripe){
-			add_card(plant_data.fruit_card, plant_data.fruit_card_n)
+			add_card(plant_data.fruit_card, 1)
 			if(plant_data.perennial){
 				ripe_count = 0;
 				calculate_dots_display();

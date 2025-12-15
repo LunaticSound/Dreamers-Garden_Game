@@ -31,9 +31,12 @@ enum plant_cards {
 	PUMPKIN,
 	MILKYWAY,
 	MANYSOUL_GRAIN,
+	FEASTBULB,
 	NIGHTSHADE_GINGKO, 
 	PURPLE_SNAIL,
-	WATER_OMEN
+	WATER_OMEN,
+	HOLLOW_BONSAI,
+	ASHEN_SHELLWOOD
 	}
 
 enum tool_cards {
@@ -69,7 +72,7 @@ ds_map_add(global.card_database, plant_cards.STARDUST,
 		element: "Sun",
         description: "It holds within the warmth of the sun and lights up darkness and cold alike.",
 		sprite: spr_card_plant_stardust,
-		plant_sprite: spr_plant_stardust
+		plant_sprite: spr_stardust_seedling
     });
 ds_map_add(global.card_database, plant_cards.MOON_ROOT, 
     {
@@ -109,7 +112,7 @@ ds_map_add(global.card_database, plant_cards.PUMPKIN,
 		element: "Sun",
         description: "Takes time and a lot of sun to grow, but will feed you for days on end.",
 		sprite: spr_card_plant_pumpkin,
-		plant_sprite: spr_plant_pumpkin
+		plant_sprite: spr_pumpkin_seedling
     })
 ds_map_add(global.card_database, plant_cards.MILKYWAY, 
 	{
@@ -130,6 +133,16 @@ ds_map_add(global.card_database, plant_cards.MANYSOUL_GRAIN,
         description: "- 1 day until ripe for every other weed around it.",
 		sprite: spr_card_plant_manysoul,
 		plant_sprite: spr_manysoul_grain_seedling
+    })
+ds_map_add(global.card_database, plant_cards.FEASTBULB, 
+	{
+        name: "Feastbulb",
+		category: card_type.PLANT,
+        type: "Fruitbearer",
+		element: "Earth",
+        description: "Nature is kind... At times.",
+		sprite: spr_card_plant_feastbulb,
+		plant_sprite: spr_feastbulb_seedling
     })
 ds_map_add(global.card_database, plant_cards.WATER_OMEN, 
 	{
@@ -161,6 +174,31 @@ ds_map_add(global.card_database, plant_cards.NIGHTSHADE_GINGKO,
 		sprite: spr_card_plant_milkyway,
 		plant_sprite: spr_milkyway_seedling
     })
+ds_map_add(global.card_database, plant_cards.HOLLOW_BONSAI, 
+	{
+        name: "Hollow Bonsai",
+		category: card_type.PLANT,
+        type: "Plant",
+		element: "Earth",
+        description: "We make tools and houses out of the bark from this hollow stump.",
+		sprite: spr_card_plant_hollow_bonsai,
+		plant_sprite: spr_hollow_bonsai_lavish
+    })
+ds_map_add(global.card_database, plant_cards.ASHEN_SHELLWOOD, 
+	{
+        name: "Ashen Shellwood",
+		category: card_type.PLANT,
+        type: "Plant",
+		element: "Earth",
+        description: "It takes a long time, but will deliver plenty of Deadwood once fully grown.",
+		sprite: spr_card_plant_ashen_shellwood,
+		plant_sprite: spr_ashen_shellwood_regular
+    })
+	
+	
+	
+	// TOOLS
+
 ds_map_add(global.card_database, tool_cards.SHOVEL, 
     {
         name: "Shovel",

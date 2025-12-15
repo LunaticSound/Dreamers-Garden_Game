@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Plants",
-    "path":"folders/Sprites/Cards/Plants.yy",
+    "name":"Earth",
+    "path":"folders/Sprites/Cards/Plants/Earth.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

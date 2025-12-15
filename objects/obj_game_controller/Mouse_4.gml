@@ -20,10 +20,11 @@ image_yscale = 0.5;
 end_day_index = 0;
 
 if(global.game_setup.days > 0 && (global.game_setup.days + 1) % global.game_setup.season_length == 0){
-	global.environment.season = floor(global.game_setup.days / global.game_setup.season_length);
+	global.environment.season += 1;
+	if (global.environment.season == 4) global.environment.season = 0;
 	var lay_id = layer_get_id("Background");
 	var back_id = layer_background_get_id(lay_id);
-	layer_background_index(back_id, back_id.image_index + 1);
+	layer_background_index(back_id, global.environment.season);
 }
 
 moon_rotation_target += (360/global.game_setup.season_length);
