@@ -18,7 +18,7 @@ enum game_state {
 
 function game_setup(){	
 global.game_setup = {
-    starting_deck: [plant_cards.FEASTBULB, plant_cards.ASHEN_SHELLWOOD, plant_cards.HOLLOW_BONSAI, plant_cards.MOON_ROOT, tool_cards.WATERING_CAN, plant_cards.GOLDEN_CLOVER, plant_cards.MILKYWAY, plant_cards.MAGIKA, tool_cards.SHOVEL, tool_cards.SICKLE, plant_cards.MANYSOUL_GRAIN],
+    starting_deck: [blessings.RAIN_DANCE, plant_cards.FEASTBULB, plant_cards.ASHEN_SHELLWOOD, plant_cards.HOLLOW_BONSAI, plant_cards.MOON_ROOT, tool_cards.WATERING_CAN, plant_cards.GOLDEN_CLOVER, plant_cards.MILKYWAY, plant_cards.MAGIKA, tool_cards.SHOVEL, tool_cards.SICKLE, plant_cards.MANYSOUL_GRAIN],
 	// "moon_root", "golden_clover", "stardust", "milkyway", "magika", "pumpkin", "sickle", "sickle", "sickle", "shovel", "shovel", "shovel"],
 	garden_x: room_width/2,
 	garden_y: room_height/4,

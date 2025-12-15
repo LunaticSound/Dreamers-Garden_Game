@@ -20,99 +20,118 @@ function card_clicked(){
 					global.selected_card_object = id;
 					switch(global.card_database[? global.selected_card].category){
 						
-						// PLANTING
+					// PLANTING
 						
-						case card_type.PLANT:
-							if(global.game_setup.shoveled_tiles > 0){
-								visible = false;
-								with (global.plant_sprite){
-									sprite_index = other.card_data.plant_sprite;
-									visible = true;
+					case card_type.PLANT:
+						if(global.game_setup.shoveled_tiles > 0){
+							visible = false;
+							with (global.plant_sprite){
+								sprite_index = other.card_data.plant_sprite;
+								visible = true;
+							}
+							if(global.selected_card_object != -1){
+								//if(global.plant_database[? global.selected_card] != -1){
+								switch(global.plant_database[? global.selected_card].effect){
+									case plant_effects.CHANGE_HEAT:
 								}
-								if(global.selected_card_object != -1){
-									//if(global.plant_database[? global.selected_card] != -1){
-										switch(global.plant_database[? global.selected_card].effect){
-											case plant_effects.CHANGE_HEAT:
+							}
+						global.state = game_state.PLANT;
+						} else {
+							card_refuse();
+						}
+						break;
+							
+						// TOOLS
+							
+							
+						case card_type.TOOL:
+							switch(global.card_database[? global.selected_card].target){
+								case tool_target.EMPTY_TILE:
+									if(global.game_setup.empty_tiles > 0){
+										visible = false;
+										with (global.plant_sprite){
+											sprite_index = other.card_data.plant_sprite;
+											visible = true;
 										}
+										global.state = game_state.TOOL;
+									} else {
+										card_refuse();
 									}
-							global.state = game_state.PLANT;
-							} else {
-								card_refuse();
+								break;
+								case tool_target.PLANT:
+									if (global.game_setup.plant_number > 0){
+										visible = false;
+										with (global.plant_sprite){
+											sprite_index = other.card_data.plant_sprite;
+											visible = true;
+										} 
+										global.state = game_state.TOOL;
+									} else {
+										card_refuse();
+									}
+								break;
+								case tool_target.ANY_TILE:
+										visible = false;
+										with (global.plant_sprite){
+											sprite_index = other.card_data.plant_sprite;
+											visible = true;
+										}
+										if (global.selected_card == tool_cards.WATERING_CAN){ 
+											global.game_setup.tool_display = tool_displays.WATERING_CAN;
+										}
+										global.state = game_state.TOOL;
+
+								}
+							break;
+								
+							// FRUITS
+								
+							case card_type.FRUIT:
+								if(!fruit_clicked){
+								with(obj_game_controller){
+								altar.target_x += 1000;
+								altar.centered = true;
+								altar.button.x -= 400;
+								consume.target_x -= 1200;
+								consume.centered = true;
+								global.state = game_state.CRAFT;
+								}
+								fruit_clicked = true;
+							}else{
+								//fruit_clicked = false;
 							}
 							break;
-							
-							// TOOLS
-							
-							
-							case card_type.TOOL:
-								switch(global.card_database[? global.selected_card].target){
-									case tool_target.EMPTY_TILE:
-										if(global.game_setup.empty_tiles > 0){
-											visible = false;
-											with (global.plant_sprite){
-												sprite_index = other.card_data.plant_sprite;
-												visible = true;
-												}
-											global.state = game_state.TOOL;
-										} else {
-											card_refuse();
-											}
-									break;
-									case tool_target.PLANT:
-										if (global.game_setup.plant_number > 0){
-											visible = false;
-											with (global.plant_sprite){
-												sprite_index = other.card_data.plant_sprite;
-												visible = true;
-											} 
-											global.state = game_state.TOOL;
-										} else {
-											card_refuse();
-										}
-									break;
-									case tool_target.ANY_TILE:
-											visible = false;
-											with (global.plant_sprite){
-												sprite_index = other.card_data.plant_sprite;
-												visible = true;
-											}
-											if (global.selected_card == tool_cards.WATERING_CAN){ 
-												global.game_setup.tool_display = tool_displays.WATERING_CAN;
-											}
-											global.state = game_state.TOOL;
-
-									}
-								break;
-								
-								// FRUITS
-								
-								
-								case card_type.FRUIT:
-								 if(!fruit_clicked){
-									with(obj_game_controller){
-									altar.target_x += 1000;
-									altar.centered = true;
-									altar.button.x -= 400;
-									consume.target_x -= 1200;
-									consume.centered = true;
-									global.state = game_state.CRAFT;
-									}
-									fruit_clicked = true;
-								}else{
-									//fruit_clicked = false;
+							case card_type.MATERIAL:
+								if(!fruit_clicked){
+								with(obj_game_controller){
+								forge.target_x += 1000;
+								forge.centered = true;
+								forge.button.x -= 400;
+								global.state = game_state.CRAFT;
 								}
-								break;
-								case card_type.MATERIAL:
-									if(!fruit_clicked){
-									with(obj_game_controller){
-									forge.target_x += 1000;
-									forge.centered = true;
-									forge.button.x -= 400;
-									global.state = game_state.CRAFT;
+								fruit_clicked = true;
+							}else{
+								//fruit_clicked = false;
+							}
+							break;
+								
+							case card_type.BLESSING:
+								switch global.selected_card{
+									case blessings.RAIN_DANCE:
+										global.environment.rain += 1;
+									break;
+								}
+								for (var i = 0; i < ds_list_size(global.player.hand_objects); i++) {
+									if (global.selected_card_object == global.player.hand_objects[| i]) {
+			                        instance_destroy(global.selected_card_object);
+									ds_list_delete(global.player.hand_objects, i);
+									ds_list_delete(global.player.hand, i);
+									ds_list_add(global.player.discard, global.selected_card);
+									global.selected_card = -1;
+									update_card_positions();
+									global.tool_display = -1;
+									global.state = game_state.CARD;
 									}
-									fruit_clicked = true;
-								}else{
-									//fruit_clicked = false;
 								}
 								break;
 							}
@@ -123,7 +142,7 @@ function card_clicked(){
 						card_selected = true;
 						global.state = game_state.SHOW_CARD;
 					}
-				}
 			}
 		}
+	}
 }

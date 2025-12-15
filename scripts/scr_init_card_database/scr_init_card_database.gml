@@ -59,6 +59,14 @@ enum material{
 	MOONSTONE= 3003
 }
 
+enum blessings{
+	RAIN_DANCE = 4000,
+	SUN_DANCE = 4001,
+	WIND_DANCE = 4002,
+	HEALING_SPIRITS = 4003,
+	COSMIC_INSPIRATION = 4004
+}
+
 
 global.card_database = ds_map_create();
 
@@ -353,5 +361,18 @@ ds_map_add(global.card_database, material.RADIANT_ROOT,
 		plant_sprite: spr_magika_regular,
 		target: -1,
 		craft_sprite: spr_craft_fruit_sun
+    })
+	
+	// BLESSINGS
+	
+ds_map_add(global.card_database, blessings.RAIN_DANCE, 
+	    {
+        name: "Rain Dance",
+		category: card_type.BLESSING,
+        type: "Blessing",
+		element: "Earth",
+        description: "We use our drums and dance to beckon the spirits to summon the rain.",
+		sprite: spr_card_blessing_rain_dance,
+		target: -1
     })
 }
