@@ -6,11 +6,15 @@ function booster_draw_card(booster_struct) {
 
     // Total up all weights
     var total_weight = 0;
-    for (var i = 0; i < array_length(pools); i++)
+	var rarity_weight = 0;
+    for (var i = 0; i < array_length(pools); i++){
         total_weight += pools[i].weight;
+		if (i < (array_length(pools) - 1)) rarity_weight += pools[i].weight;
+	}
 
     // Pick rarity pool by weight
-    var roll = irandom_range(1, total_weight);
+    var roll = irandom_range(1, total_weight) + global.player.rarity_boost;
+	roll = clamp(roll, 1, total_weight);
     var sum = 0;
     var selected_pool;
 
@@ -25,6 +29,6 @@ function booster_draw_card(booster_struct) {
     // Pick a card inside that pool
     var cards = selected_pool.cards;
     var card = cards[irandom(array_length(cards)-1)];
-
-    return card;
+	var rarity_rare = (roll >= rarity_weight);
+    return [card, rarity_rare];
 }

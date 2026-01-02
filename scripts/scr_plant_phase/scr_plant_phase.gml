@@ -6,6 +6,7 @@ function plant_phase() {
 		// Check if mouse is over a visible card
 		var top_card = instance_position(mouse_x, mouse_y, obj_card);
 		if (top_card != noone) {
+			with(obj_grid_node) draw_switch = false;
 			with (top_card) {
 				if (visible) {
 					// Card is visible, handle deselection
@@ -19,11 +20,25 @@ function plant_phase() {
 		if(!position_meeting(mouse_x, mouse_y, obj_grid_node)){
 			with (global.plant_sprite) { visible = false; }
 			with (global.selected_card_object) { visible = true; }
-			with (obj_grid_node) image_blend = c_white;
+			with (obj_grid_node){ 
+				image_blend = c_white;
+				draw_switch = false;
+			}
 			global.state = game_state.CARD;
 			return;
 		}
 	}
+	if(mouse_check_button_pressed(mb_right)){
+			with (global.plant_sprite) { visible = false; }
+			with (global.selected_card_object) { visible = true; }
+			with (obj_grid_node){ 
+				image_blend = c_white;
+				draw_switch = false;
+			}
+			global.state = game_state.CARD;
+			return;
+		}
+		
 
     // Normal planting logic
     var nearest_node = find_shoveled_tile(mouse_x, mouse_y);
@@ -42,19 +57,27 @@ function plant_phase() {
 		var tile = tiles[i];
 		with (tile){
 			if (global.plant_database[? global.selected_card].effect_strength < 0){
+				sprite_index = spr_tile_cold;
+				draw_switch = true;
 				image_blend = c_teal;
 			};
 			if (global.plant_database[? global.selected_card].effect_strength > 0){
+				sprite_index = spr_tile_hot;
+				draw_switch = true;
 				image_blend = c_orange;
 				};
 			}
 		}
 	}
     if (mouse_check_button_pressed(mb_left) && position_meeting(mouse_x, mouse_y, obj_grid_node)) {
-		// Create plant
+	
+	// Create plant
 	    var new_plant = instance_create_depth(nearest_node.x, nearest_node.y,
         global.game_setup.garden_layer_depth, obj_garden_plant);
-		with (obj_grid_node) image_blend = c_white;
+		with (obj_grid_node){
+			image_blend = c_white;
+			draw_switch = false;
+		}
         with (new_plant) {
 	        plant_id = global.selected_card;
             plant_data = global.plant_database[? plant_id];
@@ -93,12 +116,12 @@ function plant_phase() {
                 global.game_setup.shoveled_tiles -= 1;
             }
             // Remove card from hand
-            for (var i = 0; i < ds_list_size(global.player.hand_objects); i++) {
-                if (global.selected_card_object == global.player.hand_objects[| i]) {
+            for (var i = 0; i < array_length(global.player.hand_objects); i++) {
+                if (global.selected_card_object == global.player.hand_objects[i]) {
                     instance_destroy(global.selected_card_object);
-                    ds_list_delete(global.player.hand_objects, i);
-                    ds_list_delete(global.player.hand, i);
-                    ds_list_add(global.player.discard, global.selected_card);
+                    array_delete(global.player.hand_objects, i, 1);
+                    array_delete(global.player.hand, i, 1);
+                    array_push(global.player.discard, global.selected_card);
                     global.selected_card = -1;
                     update_card_positions();
                     break;

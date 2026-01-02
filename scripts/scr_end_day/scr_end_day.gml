@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function end_day(){
 	change_weather();
+	global.blessings_active = [];
 	for (var i = 0; i < array_length(global.grid_node_instances); i++){
 		for (var j = 0; j < array_length(global.grid_node_instances[i]); j++){
 			global.grid_node_instances[i][j].heat = global.environment.heat;
@@ -19,7 +20,7 @@ function end_day(){
 	}
 	global.player.hunger += global.player.hunger_rate;
 	global.player.hunger_limit += 1;
-	global.player.hunger_rate += 1;
+	global.player.hunger_rate += 0.5;
 	global.game_setup.days += 1;
 	// draw_hand(4);
 	 to_draw = 4;

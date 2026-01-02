@@ -20,20 +20,3 @@ dots_to_draw = [];
 draw_scale = 0.5;
 plant_state = plant_states.SEEDLING;
 fruit_dot = false;
-
-
-
-// scr_orb_rise_particles(x - 80, y - 60, 200, 54);
-/*
-switch(plant_data.particle){
-	case particle_type.CUBED_BELL_RISER:
-		scr_orb_rise_init(self.depth - 1);
-        scr_orb_rise_emit_cubed(
-            orb_fx.ps,
-            orb_fx.pt,
-            x - orb_spawn_width * 0.5, // left edge
-            orb_spawn_width,
-            orb_spawn_y,
-            orb_spawn_rate);
-        break;
-}

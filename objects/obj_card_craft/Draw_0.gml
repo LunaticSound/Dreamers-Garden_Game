@@ -39,3 +39,5 @@ if (current_line != "") array_push(lines, current_line);
 for (var i = 0; i < array_length(lines); i++) {
     draw_text(x - 140, desc_y + (i * line_height), lines[i]);
 }
+
+

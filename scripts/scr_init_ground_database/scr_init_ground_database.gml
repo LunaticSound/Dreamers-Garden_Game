@@ -18,7 +18,7 @@ global.ground_database = [
         water: 2,
 		max_water: 10,
         description: "Dry sand, can´t hold water well",
-		sprite: [spr_tile_sand]
+		sprite: [spr_tile_cold]
     },
     {
         id: 2,

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_turn_card",
   "parent":{
-    "name":"Card mechanics",
-    "path":"folders/Scripts/Card mechanics.yy",
+    "name":"Display decks",
+    "path":"folders/Scripts/Card mechanics/Display decks.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

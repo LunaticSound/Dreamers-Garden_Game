@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"dd1c4576-0150-4f02-a5f7-3731abd57df9","name":"dd1c4576-0150-4f02-a5f7-3731abd57df9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"23bd03e1-9b2e-47c6-b5f1-703ff42d5608","name":"23bd03e1-9b2e-47c6-b5f1-703ff42d5608","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":639,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"effa7cdb-352a-4bf6-931e-e07e7d85e800","blendMode":0,"displayName":"default","isLocked":false,"name":"effa7cdb-352a-4bf6-931e-e07e7d85e800","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"2be3f3df-e65b-4a2f-9030-e0bed32ee0eb","blendMode":0,"displayName":"default","isLocked":false,"name":"2be3f3df-e65b-4a2f-9030-e0bed32ee0eb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_card_plant_manysoul",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"dd1c4576-0150-4f02-a5f7-3731abd57df9","path":"sprites/spr_card_plant_manysoul/spr_card_plant_manysoul.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"bac8a2f0-be46-4c1c-b368-9b126767d524","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"23bd03e1-9b2e-47c6-b5f1-703ff42d5608","path":"sprites/spr_card_plant_manysoul/spr_card_plant_manysoul.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"59b358c4-8238-4ef3-a282-7e72fcb0b87c","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -81,8 +81,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"Cards",
+    "path":"texturegroups/Cards",
   },
   "type":0,
   "VTile":false,

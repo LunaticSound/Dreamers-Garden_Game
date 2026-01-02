@@ -14,7 +14,8 @@ var effects = [
 	// die Folgenden auch über GUI
 	new FX_NoiseGrain(true, 0.1),
 	new FX_ScanLines(true),
-	new FX_SunShafts(true, , 0.45, 1)
+	new FX_SunShafts(true, , 0.45, 1),
+//	new FX_DisplaceMap(true, 0.5, 0.5, 2, 90, __ppf_sprRainNormal) 
 /*
 	new FX_Dithering(true, , 0.5, 4),
 	new FX_Bloom(true, 4, 0.9, , ,c_white , , true, sprite_get_texture(spr_tile_sand, 0), 3 ),

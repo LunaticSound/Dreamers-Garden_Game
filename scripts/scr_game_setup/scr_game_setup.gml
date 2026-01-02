@@ -18,7 +18,7 @@ enum game_state {
 
 function game_setup(){	
 global.game_setup = {
-    starting_deck: [blessings.RAIN_DANCE, plant_cards.FEASTBULB, plant_cards.ASHEN_SHELLWOOD, plant_cards.HOLLOW_BONSAI, plant_cards.MOON_ROOT, tool_cards.WATERING_CAN, plant_cards.GOLDEN_CLOVER, plant_cards.MILKYWAY, plant_cards.MAGIKA, tool_cards.SHOVEL, tool_cards.SICKLE, plant_cards.MANYSOUL_GRAIN],
+    starting_deck: [fruit_cards.GOLDEN_PEACH, fruit_cards.GOLDEN_PEACH, fruit_cards.GOLDEN_PEACH, plant_cards.HOLLOW_BONSAI, plant_cards.HOLLOW_BONSAI, plant_cards.HOLLOW_BONSAI, plant_cards.GOLDEN_CLOVER, tool_cards.SHOVEL, tool_cards.SICKLE, tool_cards.WATERING_CAN, plant_cards.GOLDEN_CLOVER, plant_cards.GOLDEN_CLOVER],
 	// "moon_root", "golden_clover", "stardust", "milkyway", "magika", "pumpkin", "sickle", "sickle", "sickle", "shovel", "shovel", "shovel"],
 	garden_x: room_width/2,
 	garden_y: room_height/4,
@@ -35,7 +35,7 @@ global.game_setup = {
 	occupied_tiles: 0,
 	plant_number: 0,
 	days: 0,
-	season_length: 16,
+	season_length: 32,
 	temp_range: 58,
 	tool_display: -1
 	};
@@ -44,10 +44,12 @@ global.player = {
 	hunger : 0,           // starts at 0 (no hunger)
 	hunger_rate : 4,    // how much hunger increases per day
 	hunger_limit : 300,   // when this is reached, you starve
-    deck: ds_list_create(),
-    hand: ds_list_create(),
-    discard: ds_list_create(),
-	hand_objects: ds_list_create()
+//    deck: ds_list_create(),
+	deck: [],
+    hand: [],
+    discard: [],
+	hand_objects: [],
+	rarity_boost: 0
 };
 
 enum plant_states {

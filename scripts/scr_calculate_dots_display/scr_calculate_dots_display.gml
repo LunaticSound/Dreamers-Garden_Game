@@ -4,7 +4,7 @@ function calculate_dots_display(){
     dots_to_draw = [];
 	
 	//calcualte vitality marker
-	var vit_width = 174;
+	var vit_width = 210;
 	var current_vit = vitality / plant_data.max_vitality;
 	vit_dot_x = x - 3 - (vit_width/2) + (vit_width * current_vit);
 	

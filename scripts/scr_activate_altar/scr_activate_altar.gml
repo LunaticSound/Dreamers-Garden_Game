@@ -12,8 +12,5 @@ function activate_altar(){
 			offering_to_pass[1] = offering[1];
 			if (array_length(offering) > 2) offering_to_pass[2] = offering[2];
 offering = [];
-//			offering[0] = -1;
-//			offering[1] = -1;
-//			offering[2] = -1;
 	}
 }

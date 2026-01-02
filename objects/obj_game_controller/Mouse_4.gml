@@ -14,9 +14,7 @@ global.plant_sprite.visible = false;
 global.selected_card_object.visible = true;
 }
 
-image_xscale = 0.5;
-image_yscale = 0.5;
-
+if (global.state == game_state.CARD){
 end_day_index = 0;
 
 if(global.game_setup.days > 0 && (global.game_setup.days + 1) % global.game_setup.season_length == 0){
@@ -27,18 +25,21 @@ if(global.game_setup.days > 0 && (global.game_setup.days + 1) % global.game_setu
 	layer_background_index(back_id, global.environment.season);
 }
 
-moon_rotation_target += (360/global.game_setup.season_length);
-if (rotate_wheel = 3){
-	wheel_rotation_target += (360/global.game_setup.season_length);
+moon_rotation_target += (720/global.game_setup.season_length);
+if (rotate_wheel = 7){
+	wheel_rotation_target += (720/global.game_setup.season_length);
 	rotate_wheel = -1;
 }
 rotate_wheel += 1;
 wheel_rotation += rotate_wheel;
-discard_hand(ds_list_size(global.player.hand));
+to_discard = array_length(global.player.hand);
+alarm[2] = 1;
+show_debug_message("to_discard= " + string(to_discard));
 with(obj_garden_plant){
 	days_until_ripe = global.plant_database[? plant_id].days_until_ripe;
 }
+global.currency += 50;
 alarm[1] = 1;
-
+}
 
 

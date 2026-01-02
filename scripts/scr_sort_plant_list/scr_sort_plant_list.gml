@@ -14,7 +14,7 @@ for (var i = 0; i < count; i++) {
 // Sort the array manually
 for (var i = 0; i < array_length(temp) - 1; i++) {
     for (var j = i+1; j < array_length(temp); j++) {
-        if (temp[i][0] > temp[j][0]) {
+		if (temp[i][0] < temp[j][0]) {
             var t = temp[i];
             temp[i] = temp[j];
             temp[j] = t;

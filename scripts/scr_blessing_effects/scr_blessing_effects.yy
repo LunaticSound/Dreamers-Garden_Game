@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_blessing_effects",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_blessing_effects",
+  "parent":{
+    "name":"Blessings",
+    "path":"folders/Scripts/Blessings.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -9,11 +9,11 @@ if (show_mid){
 		obj_game_controller.altar.show_mid = false;
 		offering[0] = global.selected_card_object.card_data.element;
 		            // Remove card from hand
-            for (var i = 0; i < ds_list_size(global.player.hand_objects); i++) {
-                if (global.selected_card_object == global.player.hand_objects[| i]) {
+            for (var i = 0; i < array_length(global.player.hand_objects); i++) {
+                if (global.selected_card_object == global.player.hand_objects[i]) {
                     instance_destroy(global.selected_card_object);
-                    ds_list_delete(global.player.hand_objects, i);
-                    ds_list_delete(global.player.hand, i);
+                    array_delete(global.player.hand_objects, i, 1);
+                    array_delete(global.player.hand, i, 1);
                     global.selected_card = -1;
                     update_card_positions();
 					alarm[0] = 1;
@@ -30,16 +30,17 @@ if (show_right){
 		obj_game_controller.forge.show_right = false;
 		obj_game_controller.altar.show_right = false;
 		offering[1] = global.selected_card_object.card_data.element;
-		var col_1 = color_from_name(offering[0]);
-		var col_2 = color_from_name(offering[1]);
-		var col_mix = mix_colors([col_1, col_2]);
-		image_blend = col_mix;
+		if (object_index == obj_forge) active = true;
+//		var col_1 = color_from_name(offering[0]);
+//		var col_2 = color_from_name(offering[1]);
+//		var col_mix = mix_colors([col_1, col_2]);
+//		image_blend = col_mix;
 		            // Remove card from hand
-            for (var i = 0; i < ds_list_size(global.player.hand_objects); i++) {
-                if (global.selected_card_object == global.player.hand_objects[| i]) {
+            for (var i = 0; i < array_length(global.player.hand_objects); i++) {
+                if (global.selected_card_object == global.player.hand_objects[i]) {
                     instance_destroy(global.selected_card_object);
-                    ds_list_delete(global.player.hand_objects, i);
-                    ds_list_delete(global.player.hand, i);
+                    array_delete(global.player.hand_objects, i, 1);
+                    array_delete(global.player.hand, i, 1);
                     global.selected_card = -1;
                     update_card_positions();
 					alarm[0] = 1;
@@ -56,17 +57,17 @@ if (show_left){
 		obj_game_controller.forge.show_left = false;
 		obj_game_controller.altar.show_left = false;
 			offering[2] = global.selected_card_object.card_data.element;
-		var col_1 = color_from_name(offering[0]);
-		var col_2 = color_from_name(offering[1]);
-		var col_3 = color_from_name(offering[2]);
-		var col_mix = mix_colors([col_1, col_2, col_3]);
-		image_blend = col_mix;
+		active = true;
+//		var col_1 = color_from_name(offering[0]);
+//		var col_2 = color_from_name(offering[1]);
+//		var col_mix = mix_colors([col_1, col_2, col_3]);
+//		image_blend = col_mix;
 		            // Remove card from hand
-            for (var i = 0; i < ds_list_size(global.player.hand_objects); i++) {
-                if (global.selected_card_object == global.player.hand_objects[| i]) {
+            for (var i = 0; i < array_length(global.player.hand_objects); i++) {
+                if (global.selected_card_object == global.player.hand_objects[i]) {
                     instance_destroy(global.selected_card_object);
-                    ds_list_delete(global.player.hand_objects, i);
-                    ds_list_delete(global.player.hand, i);
+                    array_delete(global.player.hand_objects, i, 1);
+                    array_delete(global.player.hand, i, 1);
                     global.selected_card = -1;
                     update_card_positions();
 					alarm[0] = 1;

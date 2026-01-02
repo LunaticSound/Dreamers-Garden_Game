@@ -19,7 +19,7 @@ hovered = (top == id);
 
 
 // Update target position
-if(!card_selected){
+if(!card_selected && object_index != obj_card_craft){
 if (hovered) target_y = base_y - 120;
 else target_y = base_y;
 }
@@ -38,6 +38,6 @@ y_vel *= damping;
 // Update position
 y += y_vel;
 
-image_angle = lerp(image_angle, target_angle, 0.1);
+// image_angle = lerp(image_angle, target_angle, 0.1);
 
 }

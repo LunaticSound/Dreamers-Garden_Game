@@ -2,12 +2,12 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 function create_hand_objects() {
-    var num_cards = ds_list_size(global.player.hand);
+    var num_cards = array_length(global.player.hand);
 	var fan_angle = 0; // max degrees each side from center
 
     // Make sure hand_objects exists
     for (var i = 0; i < num_cards; i++) {
-        card_id = global.player.hand[| i];
+        card_id = global.player.hand[i];
 		// Evenly distribute cards across -fan_angle to +fan_angle
 		t_angle = (num_cards > 1) 
               ? lerp(fan_angle, -fan_angle, i / (num_cards - 1)) 
@@ -21,8 +21,8 @@ function create_hand_objects() {
         var inst;
 
         // Check if instance already exists at index
-        if (i < ds_list_size(global.player.hand_objects)) {
-            inst = global.player.hand_objects[| i];
+        if (i < array_length(global.player.hand_objects)) {
+            inst = global.player.hand_objects[i];
             if (instance_exists(inst) && inst.card_id == card_id) {
                 // Update existing card target position
                 inst.target_x = card_x;
@@ -51,6 +51,6 @@ function create_hand_objects() {
 			target_angle = other.t_angle;
 			x = room_width + 200;
 			}
-		ds_list_add(global.player.hand_objects, inst);
+		array_push(global.player.hand_objects, inst);
     }
 }

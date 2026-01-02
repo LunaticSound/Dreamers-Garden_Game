@@ -4,16 +4,15 @@ function card_clicked(){
 	
     var top = instance_position(mouse_x, mouse_y, obj_card);
     if (top != noone) {
-					if (forge.centered){
-					forge.target_x -= 800;
-					forge.centered = false;
-				}
-				if (altar.centered){
-					altar.target_x -= 800;
-					altar.centered = false;
-				}
+		if (forge.centered){
+		forge.target_x -= 800;
+		forge.centered = false;
+		}
+		if (altar.centered){
+			altar.target_x -= 800;
+			altar.centered = false;
+		}
         with (top) {
-			
 			if (global.state == game_state.CARD or global.state == game_state.SHOW_CARD){
 				if (card_selected){
 					global.selected_card = card_id; // Store the selected card ID
@@ -89,9 +88,11 @@ function card_clicked(){
 							case card_type.FRUIT:
 								if(!fruit_clicked){
 								with(obj_game_controller){
-								altar.target_x += 1000;
-								altar.centered = true;
-								altar.button.x -= 400;
+								if(array_length(altar.offering) < 3){
+									altar.target_x += 1000;
+									altar.centered = true;
+									altar.button.x -= 400;
+								}
 								consume.target_x -= 1200;
 								consume.centered = true;
 								global.state = game_state.CRAFT;
@@ -116,11 +117,7 @@ function card_clicked(){
 							break;
 								
 							case card_type.BLESSING:
-								switch global.selected_card{
-									case blessings.RAIN_DANCE:
-										global.environment.rain += 1;
-									break;
-								}
+								scr_blessing_effects();
 								for (var i = 0; i < ds_list_size(global.player.hand_objects); i++) {
 									if (global.selected_card_object == global.player.hand_objects[| i]) {
 			                        instance_destroy(global.selected_card_object);

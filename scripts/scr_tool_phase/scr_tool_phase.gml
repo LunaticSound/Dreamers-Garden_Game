@@ -37,6 +37,14 @@ function tool_phase(){
 				}*/
             }
         }
+	if(mouse_check_button_pressed(mb_right)){
+				global.plant_sprite.visible = false;
+//				global.game_setup.tool_display = -1;
+				with (global.selected_card_object) { visible = true; }
+				global.tool_display = -1;
+				global.state = game_state.CARD;
+			}
+			
 				switch (global.card_database[? global.selected_card].target){
 					case tool_target.EMPTY_TILE:
 					var nearest_node = find_empty_node(mouse_x, mouse_y);
@@ -64,12 +72,12 @@ function tool_phase(){
 			choose_tool_effect(nearest_node);
 			with (global.plant_sprite) visible = false;
 						// Remove the selected card from hand and hand_objects
-						for (var i = 0; i < ds_list_size(global.player.hand_objects); i++) {
-						if (global.selected_card_object == global.player.hand_objects[| i]) {
+						for (var i = 0; i < array_length(global.player.hand_objects); i++) {
+						if (global.selected_card_object == global.player.hand_objects[i]) {
                         instance_destroy(global.selected_card_object);
-						ds_list_delete(global.player.hand_objects, i);
-						ds_list_delete(global.player.hand, i);
-						ds_list_add(global.player.discard, global.selected_card);
+						array_delete(global.player.hand_objects, i, 1);
+						array_delete(global.player.hand, i, 1);
+						array_push(global.player.discard, global.selected_card);
 						global.selected_card = -1;
 						update_card_positions();
 						global.tool_display = -1;

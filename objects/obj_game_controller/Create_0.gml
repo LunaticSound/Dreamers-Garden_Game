@@ -2,15 +2,11 @@
 // You can write your code in this editor
 // Initialize player data
 
-show_debug_overlay(true); 
-
 game_setup();
 randomise();
-init_card_database();
-init_ground_database();
-init_plant_database();
-init_weather_database();
-init_booster_database();
+
+// safe_rare_drop = false;
+global.blessings_active = [];
 
 global.garden_plant_list = ds_list_create();
 global.grid_node_instances = create_garden_grid(global.game_setup.garden_size[0],global.game_setup.garden_size[1], global.game_setup.tile_size);
@@ -23,7 +19,6 @@ wheel_rotation = 0;
 moon_rotation = 0;
 wheel_rotation_target = 0;
 moon_rotation_target = 0;
-
 
 cursor = false;
 day_end_index = 0;
@@ -48,12 +43,13 @@ time_to_die = false;
 
 save_1 = "savegame_1.json";
 
-// Start with basic cards
+// Create starting deck
 for (var i = 0; i < array_length(global.game_setup.starting_deck); i++) {
-	ds_list_add(global.player.deck, global.game_setup.starting_deck[i]);
+	array_push(global.player.deck, global.game_setup.starting_deck[i]);
 	}
 shuffle_deck();
-//draw_hand(5); // Draw 5 cards to start
+
+// draw first 4 cards
 to_draw = 4;
 alarm[0] = 3;
 

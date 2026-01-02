@@ -5,3 +5,4 @@ card_selected = false;
 x_scale = 1;
 fruit_clicked = false;
 discard = false;
+hovered = false;

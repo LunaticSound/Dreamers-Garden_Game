@@ -135,8 +135,8 @@
   "size":22.0,
   "styleName":"Book",
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"GUI",
+    "path":"texturegroups/GUI",
   },
   "TTFName":"",
   "usesSDF":false,

@@ -9,7 +9,8 @@ enum particle_type{
 enum plant_effects{
 	CHANGE_HEAT,
 	HARM,
-	GREGARIOUSNESS
+	GREGARIOUSNESS,
+	RIPEN_SURROUNDING
 }
 
 
@@ -347,6 +348,39 @@ ds_map_add(global.plant_database, plant_cards.ASHEN_SHELLWOOD,
 		fruit_x: x, 
 		fruit_y: y-200,
 		fruit_wiggle: 15,
+		particle: -1,
+        glow_points: [
+        ],
+		glow_size: 1.1,
+		glow_strength: 0.2,
+		pulse_strength: 0.002,
+		flicker_factor: 0,
+		flicker_speed: game_get_speed(gamespeed_fps)/4
+    });
+	
+ds_map_add(global.plant_database, plant_cards.PILLAR_OF_THE_EARTH,
+	{
+        name: "Pillar of the earth",
+        type: "Tree",
+        effect: plant_effects.RIPEN_SURROUNDING,
+		effect_strength: 1,
+		effect_radius: "3x3",
+		description: "We gather around these natural bulwarks to honor the goddess of the earth.",
+		days_until_ripe: 6,
+		days_to_grow: 7,
+		max_vitality: 10,
+		nutritiousness: 0,
+		perennial: false,
+		heat_pref: 34,
+		heat_tol: 10,
+		water_intake: 2,
+		nutrient_intake: 1,
+		glow_sprite: -1,
+		plant_sprite: [spr_pillar_of_earth_seedling, spr_pillar_of_earth_regular, spr_pillar_of_earth_lavish, spr_pillar_of_earth_sick, spr_pillar_of_earth_dead],
+		fruit_sprite: -1,
+		fruit_card: fruit_cards.GOLDEN_PEACH,
+		fruit_x: x, 
+		fruit_y: y-200,
 		particle: -1,
         glow_points: [
         ],

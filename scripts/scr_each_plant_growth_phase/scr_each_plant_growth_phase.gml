@@ -11,13 +11,10 @@ function each_plant_growth_phase(){
 					vitality = clamp(vitality - plant_data.water_intake + underlying_tile.water_stored, 0, plant_data.max_vitality);
 					underlying_tile.water_stored = 0;
 					thirsty = true;
-					effect_create_depth(depth, ef_flare, x, y - 100, 1, c_blue)
 				}
-				image_blend = c_white;
 				if (underlying_tile.heat < plant_data.heat_pref - plant_data.heat_tol){
 					cold = true;				
 					vitality = clamp(vitality - 1, 0, plant_data.max_vitality);
-					image_blend = $FFCCBB;
 				} else{ 
 					cold = false;
 				} 
@@ -25,7 +22,6 @@ function each_plant_growth_phase(){
 			if (underlying_tile.heat > plant_data.heat_pref + plant_data.heat_tol){ 
 				hot = true;
 				vitality = clamp(vitality - 1, 0, plant_data.max_vitality);
-				image_blend = $BBCCFF;
 				
 			} else{ 
 				hot = false;
@@ -37,25 +33,30 @@ function each_plant_growth_phase(){
 			if(age_in_days >= plant_data.days_to_grow){
 				if (!hot && !cold && (vitality < plant_data.max_vitality)){ 
 					vitality += 1;
-					image_blend = c_green;
 				}
 			} else {
 				if (!thirsty && !hot && !cold && (vitality < floor(plant_data.max_vitality / 2) + 1)){ 
 					vitality += 1;
-					image_blend = c_green;
 				}
 			}
 			if (age_in_days >= plant_data.days_to_grow) plant_state = plant_states.REGULAR;
-			if (plant_state == plant_states.REGULAR && vitality == plant_data.max_vitality) plant_state = plant_states.SPLENDID;;
+			//if (plant_state == plant_states.REGULAR && vitality == plant_data.max_vitality) plant_state = plant_states.SPLENDID;
 			if (vitality <= round(plant_data.max_vitality*1/4)) plant_state = plant_states.SICK;
-			if (vitality <= 0) plant_state = plant_states.DEAD;
+			if (vitality <= 0){
+				plant_state = plant_states.DEAD;
+				fruit_ripe = 0;
+			}
 			calculate_dots_display();
 			calculate_temp_values(underlying_tile);
-			sprite_index = plant_data.plant_sprite[plant_state];
 			if (age_in_days >= plant_data.days_to_grow && (plant_state == plant_states.REGULAR or plant_state ==  plant_states.SPLENDID)){ 
 				ripe_count += 1;
-				if (plant_data.fruit_card != -1 && ripe_count >= days_until_ripe) fruit_ripe = true;
+				if (plant_data.fruit_card != -1 && ripe_count >= days_until_ripe){ 
+					fruit_ripe = true;
+					plant_state = plant_states.SPLENDID;
+					if(plant_id == plant_cards.PILLAR_OF_THE_EARTH && !fruit_ripe) scr_sfx_pillar_of_earth();
+				}
 			}
+			sprite_index = plant_data.plant_sprite[plant_state];
 			life_set = true;
 		}
 	}
@@ -67,7 +68,7 @@ function each_plant_growth_phase(){
 		life_set = false;
 		image_blend = c_white;
 		growth_phase_counter = 0;
-		growth_phase_duration = 30 - ds_list_size(global.garden_plant_list);
+		growth_phase_duration = 22 - floor(ds_list_size(global.garden_plant_list)/2);
 		}
 	}
 }

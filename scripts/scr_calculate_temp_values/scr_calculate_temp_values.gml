@@ -3,7 +3,7 @@
 
 function calculate_temp_values(tile){
 // scale factor: pixels per degree
-var px_per_degree = 145 / global.game_setup.temp_range;
+var px_per_degree = 180 / global.game_setup.temp_range;
 
 // offset from center
 x_window = (plant_data.heat_pref - (global.game_setup.temp_range/2)) * px_per_degree;
