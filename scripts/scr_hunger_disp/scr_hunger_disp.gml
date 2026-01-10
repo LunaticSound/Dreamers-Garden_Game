@@ -7,7 +7,7 @@ function hunger_disp(){
 var bar_x = room_width - 140;
 var bar_y = display_get_gui_height() - 650; // leaves space at bottom
 var bar_w = 40;
-var bar_h = 554;
+var bar_h = 277  //554;
 
 draw_sprite(spr_hunger_display, 0, bar_x, bar_y)
 
@@ -27,12 +27,6 @@ fill_top = lerp(fill_top, bar_y + bar_h - fill_height, 0.1);
 if (fill_top - bar_y <= 1) time_to_die = true;
 
 // Draw filled part (bottom up)
-draw_rectangle(bar_x, fill_top, bar_x + bar_w, bar_y + bar_h, false);
-
-// Text label
-draw_set_color(c_white);
-// draw_text(bar_x + bar_w + 8, bar_y + bar_h - 12,
-//          "Hunger: " + string(global.player.hunger));
-
+draw_rectangle(bar_x, bar_y + fill_height , bar_x + bar_w, bar_y + bar_h, false);
 
 }

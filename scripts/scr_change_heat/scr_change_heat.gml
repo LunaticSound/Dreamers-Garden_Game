@@ -1,23 +1,25 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function change_heat(grid_x, grid_y, n_affected, heat_change){
-	var tiles = affected_nodes(grid_x, grid_y, n_affected);
-	for (var i = 0; i < array_length(tiles); i++) {
-	    var tile = tiles[i];
-	    with (tile){
-			heat += heat_change;	
-			if(inhabitant != -1){ 
-				with(inhabitant){
-					calculate_temp_values(other);
-					if (underlying_tile.heat < plant_data.heat_pref - plant_data.heat_tol){
-						cold = true;			
-					} else{ 
-						cold = false;
-					} 
-					if (underlying_tile.heat > plant_data.heat_pref + plant_data.heat_tol){ 
-						hot = true;				
-					} else{ 
-					hot = false;
+function change_heat(grid_x, grid_y, n_affected, heat_change, plant){
+	if(plant.plant_state != plant_states.DEAD){
+		var tiles = affected_nodes(grid_x, grid_y, n_affected);
+		for (var i = 0; i < array_length(tiles); i++) {
+		    var tile = tiles[i];
+		    with (tile){
+				heat += heat_change;	
+				if(inhabitant != -1){ 
+					with(inhabitant){
+						calculate_temp_values(other);
+						if (underlying_tile.heat < plant_data.heat_pref - plant_data.heat_tol){
+							cold = true;			
+						} else{ 
+							cold = false;
+						} 
+						if (underlying_tile.heat > plant_data.heat_pref + plant_data.heat_tol){ 
+							hot = true;				
+						} else{ 
+						hot = false;
+						}
 					}
 				}
 			}

@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_card_destroy",
+  "name":"shd_card_destroy",
+  "parent":{
+    "name":"Shaders",
+    "path":"folders/Shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

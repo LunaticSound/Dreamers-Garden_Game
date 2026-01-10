@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
-function create_hand_objects() {
+function create_hand_objects(is_new) {
     var num_cards = array_length(global.player.hand);
 	var fan_angle = 0; // max degrees each side from center
 
@@ -50,7 +50,11 @@ function create_hand_objects() {
 			x_vel = 0;
 			target_angle = other.t_angle;
 			x = room_width + 200;
+			if(is_new){
+				x = room_width/2;
+				y = room_height/2;
 			}
 		array_push(global.player.hand_objects, inst);
     }
+}
 }

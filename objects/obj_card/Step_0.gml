@@ -10,6 +10,7 @@ if(device_mouse_check_button_pressed(0, mb_left)){
 			target_y = base_y;
 			card_selected = false;
 			fruit_clicked = false;
+			card_horny = false;
 			if (global.state != game_state.TOOL && global.state != game_state.PLANT) global.state = game_state.CARD;
 				}
 			}
@@ -18,3 +19,12 @@ if(device_mouse_check_button_pressed(0, mb_left)){
 if (discard) target_x = -200;
 
 if (x = -200) instance_destroy();
+
+if (card_horny){
+	shake_phase += 1;
+	shake = shake_phase/2 + 90// clamp(shake_phase - 50, 0, 360);
+	shake_val =  sin(degtorad(shake))*20;
+	shake_offset_x = random(shake_val);
+	shake_offset_y = random(shake_val);
+	if(shake_phase >= 360) shake_phase = 0;
+}

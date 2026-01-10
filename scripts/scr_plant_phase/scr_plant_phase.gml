@@ -99,7 +99,7 @@ function plant_phase() {
 			calculate_temp_values(nearest_node);
 			switch(plant_data.effect){
 				case plant_effects.CHANGE_HEAT:
-				change_heat(gx, gy, plant_data.effect_radius, plant_data.effect_strength)	
+				change_heat(gx, gy, plant_data.effect_radius, plant_data.effect_strength, self)	
 				case plant_effects.GREGARIOUSNESS:
 				gregariousness(gx, gy, plant_data.effect_radius, plant_data.effect_strength)
 			}

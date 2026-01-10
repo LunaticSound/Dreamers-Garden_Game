@@ -15,12 +15,14 @@ function receive_cards(offerings){
 		}
 	if (loot_spawned){
 		if(device_mouse_check_button(0, mb_left) && position_meeting(mouse_x, mouse_y, obj_card_craft)){
-			add_card(instance_position(mouse_x, mouse_y, obj_card_craft).card_id, 1);
+			var card_to_add = instance_position(mouse_x, mouse_y, obj_card_craft);
+			card_to_add.target_x = room_width/2;
+			card_to_add.alarm[0] = 30;
 			loot_spawned = false;
 			for (var j = 0; j < 3; j += 1){
-				instance_destroy(loot_cards[j])
+				if (loot_cards[j] != card_to_add) loot_cards[j].destroying = true;
 			}
-			with(obj_card_craft) instance_destroy();
+			// with(obj_card_craft) instance_destroy();
 			global.state = game_state.CARD;
 		}
 	}

@@ -40,4 +40,9 @@ y += y_vel;
 
 // image_angle = lerp(image_angle, target_angle, 0.1);
 
+levitate_offset = sin(degtorad(levitate_phase)) * levitate_amp;
+levitate_phase += levitate_speed;
+if (levitate_phase >= 360) levitate_phase -= 360;
+
+
 }

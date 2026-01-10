@@ -53,7 +53,7 @@ function each_plant_growth_phase(){
 				if (plant_data.fruit_card != -1 && ripe_count >= days_until_ripe){ 
 					fruit_ripe = true;
 					plant_state = plant_states.SPLENDID;
-					if(plant_id == plant_cards.PILLAR_OF_THE_EARTH && !fruit_ripe) scr_sfx_pillar_of_earth();
+					if(plant_id == plant_cards.PILLAR_OF_THE_EARTH && !fruit_ripe) scr_pillar_of_earth();
 				}
 			}
 			sprite_index = plant_data.plant_sprite[plant_state];

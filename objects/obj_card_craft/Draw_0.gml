@@ -1,6 +1,21 @@
 // obj_card Draw Event
 // Draw the card sprite
-draw_sprite_ext(sprite_index, 0, x, y, x_scale, 1, image_angle, c_white, 1);
+
+var mx = camera_get_view_x(view_camera[0]) + mouse_x;
+var my = camera_get_view_y(view_camera[0]) + mouse_y;
+
+hovered = position_meeting(mx, my, id);
+
+image_blend = c_grey;
+
+if (hovered) image_blend = c_white;
+
+scr_draw_destroy_card();
+scr_draw_icon();
+image_blend = c_white;
+
+//draw_sprite_ext(sprite_index, 0, x, y, x_scale, 1, image_angle, col, hovered);
+
 
 // Set font and alignment
 draw_set_font(fnt_card_name); // Use a readable font

@@ -28,12 +28,14 @@ function card_clicked(){
 								sprite_index = other.card_data.plant_sprite;
 								visible = true;
 							}
+							/*
 							if(global.selected_card_object != -1){
 								//if(global.plant_database[? global.selected_card] != -1){
 								switch(global.plant_database[? global.selected_card].effect){
 									case plant_effects.CHANGE_HEAT:
 								}
 							}
+							*/
 						global.state = game_state.PLANT;
 						} else {
 							card_refuse();
@@ -87,15 +89,15 @@ function card_clicked(){
 								
 							case card_type.FRUIT:
 								if(!fruit_clicked){
-								with(obj_game_controller){
-								if(array_length(altar.offering) < 3){
-									altar.target_x += 1000;
-									altar.centered = true;
-									altar.button.x -= 400;
-								}
-								consume.target_x -= 1200;
-								consume.centered = true;
-								global.state = game_state.CRAFT;
+									with(obj_game_controller){
+									if(array_length(altar.offering) < 3){
+										altar.target_x += 1000;
+										altar.centered = true;
+										altar.button.x -= 400;
+									}
+									consume.target_x -= 1200;
+									consume.centered = true;
+									global.state = game_state.CRAFT;
 								}
 								fruit_clicked = true;
 							}else{
@@ -118,12 +120,12 @@ function card_clicked(){
 								
 							case card_type.BLESSING:
 								scr_blessing_effects();
-								for (var i = 0; i < ds_list_size(global.player.hand_objects); i++) {
-									if (global.selected_card_object == global.player.hand_objects[| i]) {
+								for (var i = 0; i < array_length(global.player.hand_objects); i++) {
+									if (global.selected_card_object == global.player.hand_objects[i]) {
 			                        instance_destroy(global.selected_card_object);
-									ds_list_delete(global.player.hand_objects, i);
-									ds_list_delete(global.player.hand, i);
-									ds_list_add(global.player.discard, global.selected_card);
+									array_delete(global.player.hand_objects, i, 1);
+									array_delete(global.player.hand, i, 1);
+									array_push(global.player.discard, global.selected_card);
 									global.selected_card = -1;
 									update_card_positions();
 									global.tool_display = -1;
@@ -137,6 +139,9 @@ function card_clicked(){
 						target_x = room_width/2;
 						target_y = room_height/2;
 						card_selected = true;
+						if (global.card_database[? top.card_id].category == card_type.FRUIT){
+							card_horny = true;
+						}
 						global.state = game_state.SHOW_CARD;
 					}
 			}

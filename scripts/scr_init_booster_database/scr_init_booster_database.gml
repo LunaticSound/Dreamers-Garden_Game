@@ -11,6 +11,54 @@ enum rarities {
 
 global.booster_database = ds_map_create();
 
+ds_map_add(global.booster_database, "Earth+Earth+Earth",  
+		{
+        name: "Superearth",
+		sprite: spr_booster_superearth,
+		loot_pools: [
+			{ rarity: rarities.COMMON,    weight: 65, cards: [plant_cards.HOLLOW_BONSAI, plant_cards.GOLDEN_CLOVER, plant_cards.MANYSOUL_GRAIN, plant_cards.STARDUST, blessings.THE_FEAST] },
+			{ rarity: rarities.UNCOMMON,  weight: 25, cards: [plant_cards.PUMPKIN, plant_cards.ASHEN_SHELLWOOD] },
+			{ rarity: rarities.RARE,      weight:  8, cards: [plant_cards.PILLAR_OF_THE_EARTH] },
+			//{ rarity: "legendary", weight:  2, cards: [12] }
+		]
+    });
+	
+ds_map_add(global.booster_database, "Earth+Earth+Moon",  
+		{
+        name: "The Ancestors",
+		sprite: spr_booster_ancestors,
+		loot_pools: [
+			{ rarity: rarities.COMMON,    weight: 65, cards: [plant_cards.GOLDEN_CLOVER, plant_cards.MILKYWAY] },
+			{ rarity: rarities.UNCOMMON,  weight: 25, cards: [plant_cards.MILKYWAY] },
+			/* { rarity: "rare",      weight:  8, cards: [10,11] },
+			{ rarity: "legendary", weight:  2, cards: [12] } */
+		]
+    });
+	
+ds_map_add(global.booster_database, "Earth+Earth+Sun",  
+		{
+        name: "Green Planet",
+		sprite: spr_booster_green_planet,
+		loot_pools: [
+			{ rarity: rarities.COMMON,    weight: 65, cards: [plant_cards.GOLDEN_CLOVER] },
+			{ rarity: rarities.UNCOMMON,  weight: 25, cards: [plant_cards.PUMPKIN] },
+			/* { rarity: "rare",      weight:  8, cards: [10,11] },
+			{ rarity: "legendary", weight:  2, cards: [12] } */
+		]
+    });
+	
+ds_map_add(global.booster_database, "Earth+Earth+Illusion",  
+		{
+        name: "Strange Planet",
+		sprite: spr_booster_strange_planet,
+		loot_pools: [
+			{ rarity: rarities.COMMON,    weight: 65, cards: [plant_cards.GOLDEN_CLOVER] },
+			{ rarity: rarities.UNCOMMON,  weight: 25, cards: [plant_cards.PUMPKIN] },
+			/* { rarity: "rare",      weight:  8, cards: [10,11] },
+			{ rarity: "legendary", weight:  2, cards: [12] } */
+		]
+    });
+
 ds_map_add(global.booster_database, "Moon+Moon+Moon",  
 		{
         name: "Triple Moon",
@@ -58,54 +106,6 @@ ds_map_add(global.booster_database, "Illusion+Moon+Moon",
 			{ rarity: "legendary", weight:  2, cards: [12] } */
 		]
 });
-
-ds_map_add(global.booster_database, "Earth+Earth+Earth",  
-		{
-        name: "Superearth",
-		sprite: spr_booster_superearth,
-		loot_pools: [
-			{ rarity: rarities.COMMON,    weight: 65, cards: [plant_cards.GOLDEN_CLOVER, plant_cards.MANYSOUL_GRAIN, plant_cards.ASHEN_SHELLWOOD, blessings.THE_FEAST] },
-			{ rarity: rarities.UNCOMMON,  weight: 25, cards: [plant_cards.PUMPKIN] },
-			{ rarity: rarities.RARE,      weight:  8, cards: [plant_cards.PILLAR_OF_THE_EARTH] },
-			//{ rarity: "legendary", weight:  2, cards: [12] }
-		]
-    });
-	
-ds_map_add(global.booster_database, "Earth+Earth+Moon",  
-		{
-        name: "The Ancestors",
-		sprite: spr_booster_ancestors,
-		loot_pools: [
-			{ rarity: rarities.COMMON,    weight: 65, cards: [plant_cards.GOLDEN_CLOVER, plant_cards.MILKYWAY] },
-			{ rarity: rarities.UNCOMMON,  weight: 25, cards: [plant_cards.MILKYWAY] },
-			/* { rarity: "rare",      weight:  8, cards: [10,11] },
-			{ rarity: "legendary", weight:  2, cards: [12] } */
-		]
-    });
-	
-ds_map_add(global.booster_database, "Earth+Earth+Sun",  
-		{
-        name: "Green Planet",
-		sprite: spr_booster_green_planet,
-		loot_pools: [
-			{ rarity: rarities.COMMON,    weight: 65, cards: [plant_cards.GOLDEN_CLOVER] },
-			{ rarity: rarities.UNCOMMON,  weight: 25, cards: [plant_cards.PUMPKIN] },
-			/* { rarity: "rare",      weight:  8, cards: [10,11] },
-			{ rarity: "legendary", weight:  2, cards: [12] } */
-		]
-    });
-	
-ds_map_add(global.booster_database, "Earth+Earth+Illusion",  
-		{
-        name: "Strange Planet",
-		sprite: spr_booster_strange_planet,
-		loot_pools: [
-			{ rarity: rarities.COMMON,    weight: 65, cards: [plant_cards.GOLDEN_CLOVER] },
-			{ rarity: rarities.UNCOMMON,  weight: 25, cards: [plant_cards.PUMPKIN] },
-			/* { rarity: "rare",      weight:  8, cards: [10,11] },
-			{ rarity: "legendary", weight:  2, cards: [12] } */
-		]
-    });
 	
 ds_map_add(global.booster_database, "Illusion+Illusion+Illusion",  
 		{

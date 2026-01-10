@@ -80,71 +80,79 @@ ds_map_add(global.card_database, plant_cards.STARDUST,
     {
         name: "Stardust",
 		category: card_type.PLANT,
-        type: "Plant",
+        type: "Plant - Support",
 		element: "Sun",
         description: "It holds within the warmth of the sun and lights up darkness and cold alike.",
 		sprite: spr_card_plant_stardust,
-		plant_sprite: spr_stardust_seedling
+		plant_sprite: spr_stardust_seedling,
+		icon_sprite: spr_icon_type_plant_fruitbearer
     });
+	
 ds_map_add(global.card_database, plant_cards.MOON_ROOT, 
     {
         name: "Moon Root",
 		category: card_type.PLANT,
-        type: "Plant",
+        type: "Plant - Fruitbearer",
 		element: "Moon",
         description: "It guides wandering souls through the dark of the night with its blue shine.",
 		sprite: spr_card_plant_moon_root,
-		plant_sprite: spr_moon_root_seedling
+		plant_sprite: spr_moon_root_seedling,
+		icon_sprite: spr_icon_type_plant_fruitbearer
     })
 ds_map_add(global.card_database, plant_cards.GOLDEN_CLOVER, 
 	{
         name: "Golden Clover",
 		category: card_type.PLANT,
-        type: "Plant",
+        type: "Plant - Perennial Fruitbearer",
 		element: "Earth",
         description: "Everybodys darling because of its delicious and nutrient rich golden fruit.",
 		sprite: spr_card_plant_golden_clover,
-		plant_sprite: spr_golden_clover_seedling
+		plant_sprite: spr_golden_clover_seedling,
+		icon_sprite: spr_icon_type_plant_fruitbearer
     })
 ds_map_add(global.card_database, plant_cards.MAGIKA, 
     {
         name: "Magika",
 		category: card_type.PLANT,
-        type: "Plant",
+        type: "Plant - Perennial Fruitbearer",
 		element: "Illusion",
         description: "The deities favour the bittersweet taste of Magikas fruit.",
 		sprite: spr_card_plant_magika,
-		plant_sprite: spr_magika_seedling
+		plant_sprite: spr_magika_seedling,
+		icon_sprite: spr_icon_type_plant_fruitbearer
     })
 ds_map_add(global.card_database, plant_cards.PUMPKIN,
     {
         name: "Skull of Ra",
 		category: card_type.PLANT,
-        type: "Plant",
+        type: "Plant - Fruitbearer",
 		element: "Sun",
         description: "Takes time and a lot of sun to grow, but will feed you for days on end.",
 		sprite: spr_card_plant_pumpkin,
-		plant_sprite: spr_pumpkin_seedling
+		plant_sprite: spr_pumpkin_seedling,
+		icon_sprite: spr_icon_type_plant_fruitbearer
     })
 ds_map_add(global.card_database, plant_cards.MILKYWAY, 
 	{
         name: "Milkyway",
 		category: card_type.PLANT,
-        type: "Plant",
+        type: "Plant - Support",
 		element: "Moon",
         description: "Its spiraling leaves provide a breeze of fresh air to surrounding plants.",
 		sprite: spr_card_plant_milkyway,
-		plant_sprite: spr_milkyway_seedling
+		plant_sprite: spr_milkyway_seedling,
+		icon_sprite: spr_icon_type_plant
     })
 ds_map_add(global.card_database, plant_cards.MANYSOUL_GRAIN, 
 	{
         name: "Manysoul Grain",
 		category: card_type.PLANT,
-        type: "Weed",
+        type: "Plant - Perennial Fruitbearer",
 		element: "Earth",
         description: "- 1 day until ripe for every other weed around it.",
 		sprite: spr_card_plant_manysoul,
-		plant_sprite: spr_manysoul_grain_seedling
+		plant_sprite: spr_manysoul_grain_seedling,
+		icon_sprite: spr_icon_type_plant_fruitbearer
     })
 ds_map_add(global.card_database, plant_cards.FEASTBULB, 
 	{
@@ -154,7 +162,8 @@ ds_map_add(global.card_database, plant_cards.FEASTBULB,
 		element: "Earth",
         description: "Nature is kind... At times.",
 		sprite: spr_card_plant_feastbulb,
-		plant_sprite: spr_feastbulb_seedling
+		plant_sprite: spr_feastbulb_seedling,
+		icon_sprite: spr_icon_type_plant_fruitbearer
     })
 ds_map_add(global.card_database, plant_cards.WATER_OMEN, 
 	{
@@ -164,7 +173,8 @@ ds_map_add(global.card_database, plant_cards.WATER_OMEN,
 		element: "Moon",
         description: "Harvest: Next day will be rainy.",
 		sprite: spr_card_plant_milkyway,
-		plant_sprite: spr_milkyway_seedling
+		plant_sprite: spr_milkyway_seedling,
+		icon_sprite: spr_icon_type_plant
     })
 ds_map_add(global.card_database, plant_cards.PURPLE_SNAIL, 
 	{
@@ -172,9 +182,10 @@ ds_map_add(global.card_database, plant_cards.PURPLE_SNAIL,
 		category: card_type.PLANT,
         type: "Plant",
 		element: "Illusion",
-        description: "Its spiraling leaves provide a breeze of fresh air to surrounding plants.",
+        description: "...",
 		sprite: spr_card_plant_milkyway,
-		plant_sprite: spr_milkyway_seedling
+		plant_sprite: spr_milkyway_seedling,
+		icon_sprite: spr_icon_type_plant_fruitbearer
     })
 ds_map_add(global.card_database, plant_cards.NIGHTSHADE_GINGKO, 
 	{
@@ -182,19 +193,21 @@ ds_map_add(global.card_database, plant_cards.NIGHTSHADE_GINGKO,
 		category: card_type.PLANT,
         type: "Plant",
 		element: "Moon",
-        description: "Its spiraling leaves provide a breeze of fresh air to surrounding plants.",
+        description: "...",
 		sprite: spr_card_plant_milkyway,
-		plant_sprite: spr_milkyway_seedling
+		plant_sprite: spr_milkyway_seedling,
+		icon_sprite: spr_icon_type_plant_fruitbearer
     })
 ds_map_add(global.card_database, plant_cards.HOLLOW_BONSAI, 
 	{
         name: "Hollow Bonsai",
 		category: card_type.PLANT,
-        type: "Plant",
+        type: "Plant - Material",
 		element: "Earth",
         description: "We make tools and houses out of the bark from this hollow stump.",
 		sprite: spr_card_plant_hollow_bonsai,
-		plant_sprite: spr_hollow_bonsai_seedling
+		plant_sprite: spr_hollow_bonsai_seedling,
+		icon_sprite: spr_icon_type_plant
     })
 ds_map_add(global.card_database, plant_cards.ASHEN_SHELLWOOD, 
 	{
@@ -204,7 +217,8 @@ ds_map_add(global.card_database, plant_cards.ASHEN_SHELLWOOD,
 		element: "Earth",
         description: "It takes a long time, but will deliver plenty of Deadwood once fully grown.",
 		sprite: spr_card_plant_ashen_shellwood,
-		plant_sprite: spr_ashen_shellwood_seedling
+		plant_sprite: spr_ashen_shellwood_seedling,
+		icon_sprite: spr_icon_type_plant
     })
 	
 ds_map_add(global.card_database, plant_cards.PILLAR_OF_THE_EARTH, 
@@ -215,7 +229,8 @@ ds_map_add(global.card_database, plant_cards.PILLAR_OF_THE_EARTH,
 		element: "Earth",
         description: "Once it becomes ripe, all surrounding plants immediately do so, as well.",
 		sprite: spr_card_plant_ashen_shellwood,
-		plant_sprite: spr_ashen_shellwood_seedling
+		plant_sprite: spr_ashen_shellwood_seedling,
+		icon_sprite: spr_icon_type_plant_fruitbearer
     })
 	
 	
@@ -231,7 +246,8 @@ ds_map_add(global.card_database, tool_cards.SHOVEL,
         description: "Prepare the soil for planting seedlings for today.",
 		sprite: spr_card_tool_shovel,
 		plant_sprite: spr_tool_shovel,
-		target: tool_target.EMPTY_TILE
+		target: tool_target.EMPTY_TILE,
+		icon_sprite: spr_icon_type_tool
     })
 ds_map_add(global.card_database, tool_cards.SICKLE, 
 	    {
@@ -243,7 +259,8 @@ ds_map_add(global.card_database, tool_cards.SICKLE,
         description: "Harvest fruits and cut plants.",
 		sprite: spr_card_tool_sickle,
 		plant_sprite: spr_tool_sickle,
-		target: tool_target.PLANT
+		target: tool_target.PLANT,
+		icon_sprite: spr_icon_type_tool
     })
 ds_map_add(global.card_database, tool_cards.WATERING_CAN, 
 	    {
@@ -255,7 +272,8 @@ ds_map_add(global.card_database, tool_cards.WATERING_CAN,
         description: "Water your plants.",
 		sprite: spr_card_tool_can,
 		plant_sprite: spr_tool_can,
-		target: tool_target.ANY_TILE
+		target: tool_target.ANY_TILE,
+		icon_sprite: spr_icon_type_tool
     })
 	
 	// --- FRUITS --- 
@@ -265,28 +283,30 @@ ds_map_add(global.card_database, fruit_cards.GOLDEN_PEACH,
         name: "Golden Peach",
 		category: card_type.FRUIT,
         type: "Fruit",
-		nutritiousness: 9,
+		nutritiousness: 16,
 		element: "Earth",
         effect: -1,
         description: "Yum.",
 		sprite: spr_card_fruit_earth,
 		plant_sprite: spr_golden_clover_regular,
 		target: -1,
-		craft_sprite: spr_craft_fruit_earth
+		craft_sprite: spr_craft_fruit_earth,
+		icon_sprite: spr_icon_type_fruit
     })
 ds_map_add(global.card_database, fruit_cards.MAGIFRUIT, 
 	    {
         name: "Magifruit",
 		category: card_type.FRUIT,
         type: "Fruit",
-		nutritiousness: 3,
+		nutritiousness: 23,
 		element: "Illusion",
         effect: -1,
         description: "Yuck.",
 		sprite: spr_card_fruit_illusion,
 		plant_sprite: spr_magika_regular,
 		target: -1,
-		craft_sprite: spr_craft_fruit_illusion
+		craft_sprite: spr_craft_fruit_illusion,
+		icon_sprite: spr_icon_type_fruit
     })
 
 ds_map_add(global.card_database, fruit_cards.MOONFRUIT, 
@@ -294,14 +314,15 @@ ds_map_add(global.card_database, fruit_cards.MOONFRUIT,
         name: "Moon Fruit",
 		category: card_type.FRUIT,
         type: "Fruit",
-		nutritiousness: 6,
+		nutritiousness: 26,
 		element: "Moon",
         effect: -1,
         description: "Yuck.",
 		sprite: spr_card_fruit_moon,
 		plant_sprite: spr_magika_regular,
 		target: -1,
-		craft_sprite: spr_craft_fruit_moon
+		craft_sprite: spr_craft_fruit_moon,
+		icon_sprite: spr_icon_type_fruit
     })
 	
 ds_map_add(global.card_database, fruit_cards.BLOATKIN, 
@@ -316,7 +337,8 @@ ds_map_add(global.card_database, fruit_cards.BLOATKIN,
 		sprite: spr_card_fruit_sun,
 		plant_sprite: spr_magika_regular,
 		target: -1,
-		craft_sprite: spr_craft_fruit_sun
+		craft_sprite: spr_craft_fruit_sun,
+		icon_sprite: spr_icon_type_fruit
     })
 	
 	// --- CRAFTING MATERIALS ---
@@ -332,7 +354,8 @@ ds_map_add(global.card_database, material.DEADWOOD,
 		sprite: spr_card_material_earth,
 		plant_sprite: spr_magika_regular,
 		target: -1,
-		craft_sprite: spr_craft_fruit_earth
+		craft_sprite: spr_craft_fruit_earth,
+		icon_sprite: spr_icon_type_material
     })
 	
 ds_map_add(global.card_database, material.MIRRORGLAS, 
@@ -346,7 +369,8 @@ ds_map_add(global.card_database, material.MIRRORGLAS,
 		sprite: spr_card_material_illusion,
 		plant_sprite: spr_magika_regular,
 		target: -1,
-		craft_sprite: spr_craft_fruit_illusion
+		craft_sprite: spr_craft_fruit_illusion,
+		icon_sprite: spr_icon_type_material
     })
 	
 ds_map_add(global.card_database, material.MOONSTONE, 
@@ -360,7 +384,8 @@ ds_map_add(global.card_database, material.MOONSTONE,
 		sprite: spr_card_material_moon,
 		plant_sprite: spr_magika_regular,
 		target: -1,
-		craft_sprite: spr_craft_fruit_moon
+		craft_sprite: spr_craft_fruit_moon,
+		icon_sprite: spr_icon_type_material
     })
 	
 ds_map_add(global.card_database, material.RADIANT_ROOT, 
@@ -374,7 +399,8 @@ ds_map_add(global.card_database, material.RADIANT_ROOT,
 		sprite: spr_card_material_sun,
 		plant_sprite: spr_magika_regular,
 		target: -1,
-		craft_sprite: spr_craft_fruit_sun
+		craft_sprite: spr_craft_fruit_sun,
+		icon_sprite: spr_icon_type_material
     })
 	
 	// BLESSINGS
@@ -387,7 +413,8 @@ ds_map_add(global.card_database, blessings.RAIN_DANCE,
 		element: "Earth",
         description: "We use our drums and dance to beckon the spirits to summon the rain.",
 		sprite: spr_card_blessing_rain_dance,
-		target: -1
+		target: -1,
+		icon_sprite: spr_icon_type_blessing
     })
 	
 ds_map_add(global.card_database, blessings.HOLY_WATER, 
@@ -398,7 +425,8 @@ ds_map_add(global.card_database, blessings.HOLY_WATER,
 		element: "Earth",
         description: "This sacred potation heals all plants in the garden.",
 		sprite: spr_card_blessing_holy_water,
-		target: -1
+		target: -1,
+		icon_sprite: spr_icon_type_blessing
     })
 	
 ds_map_add(global.card_database, blessings.THE_PATH, 
@@ -409,7 +437,8 @@ ds_map_add(global.card_database, blessings.THE_PATH,
 		element: "Earth",
         description: "Boosters opened this day will always contain a rare card.",
 		sprite: spr_card_blessing_path,
-		target: -1
+		target: -1,
+		icon_sprite: spr_icon_type_blessing
     })
 
 ds_map_add(global.card_database, blessings.THE_FEAST, 
@@ -420,7 +449,8 @@ ds_map_add(global.card_database, blessings.THE_FEAST,
 		element: "Earth",
         description: "Fruits consumed today will satiate your hunger twice as much",
 		sprite: spr_card_blessing_stump,
-		target: -1
+		target: -1,
+		icon_sprite: spr_icon_type_blessing
     })
 	
 ds_map_add(global.card_database, blessings.FORBIDDEN_RITUAL, 
@@ -431,7 +461,8 @@ ds_map_add(global.card_database, blessings.FORBIDDEN_RITUAL,
 		element: "Illusion",
         description: "Revive all dead plants in the garden",
 		sprite: spr_card_blessing_woodnymph,
-		target: -1
+		target: -1,
+		icon_sprite: spr_icon_type_blessing
     })
 	
 ds_map_add(global.card_database, blessings.COSMIC_INSPIRATION, 
@@ -442,6 +473,7 @@ ds_map_add(global.card_database, blessings.COSMIC_INSPIRATION,
 		element: "Moon",
         description: "Draw two cards.",
 		sprite: spr_card_blessing_rain_dance,
-		target: -1
+		target: -1,
+		icon_sprite: spr_icon_type_blessing
     })
 }

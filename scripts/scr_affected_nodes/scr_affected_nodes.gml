@@ -1,34 +1,5 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-/*
-function affected_nodes(gx, gy, n){
-    var candidates = [];
-
-    // Collect all tiles with their distance
-    for (var _x = 0; _x < 5; _x++) {
-        for (var _y = 0; _y < 5; _y++) {
-            var dist = abs(_x - gx) + abs(_y - gy);
-            array_push(candidates, [dist, global.grid_node_instances[_x][_y]]);
-        }
-    }
-
-    // Sort by distance ascending
-    array_sort(candidates, function(a, b) {
-        return a[0] - b[0];
-    });
-
-    // Build the result array
-    var result = [];
-    var count = min(n, array_length(candidates));
-
-    for (var i = 0; i < count; i++) {
-        array_push(result, candidates[i][1]);  // only the tile
-    }
-
-    return result; // fully self-contained array
-}
-*/
-
 /// affected_nodes(gx, gy, type, param)
 /// gx, gy = grid coordinates of the center tile
 /// type = "plus", "3x3", "n_closest", "radius"

@@ -55,3 +55,5 @@ alarm[0] = 3;
 
 image_xscale = 0.5;
 image_yscale = 0.5;
+
+scr_set_up_destroy_particle();

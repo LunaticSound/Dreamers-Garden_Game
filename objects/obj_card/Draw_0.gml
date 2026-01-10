@@ -1,6 +1,10 @@
 // obj_card Draw Event
 // Draw the card sprite
-draw_sprite_ext(sprite_index, 0, x, y, x_scale, 1, image_angle, c_white, 1);
+
+var y_pos = y + levitate_offset;
+
+draw_sprite_ext(sprite_index, 0, x, y_pos, x_scale, 1, image_angle, c_white, 1);
+scr_draw_icon();
 
 // Set font and alignment
 draw_set_font(fnt_card_name); // Use a readable font
@@ -9,13 +13,13 @@ draw_set_valign(fa_top);    // Top-align text
 draw_set_color(c_black);    // Text color
 
 // Draw card name (top)
-draw_text(x, y - 315, card_data.name);
+draw_text(x , y_pos - 315, card_data.name);
 draw_set_font(fnt_card_type); // Use a readable font
 draw_set_halign(fa_left);
-draw_text(x - 145, y + 158, card_data.type);
+draw_text(x - 145, y_pos + 158, card_data.type);
 
 // Draw description (bottom)
-var desc_y = y + 186; // Adjust based on card height
+var desc_y = y_pos + 186; // Adjust based on card height
 var line_height = 18;
 var max_width = 300;   // Max width for text wrapping
 

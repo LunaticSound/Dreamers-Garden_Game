@@ -13,7 +13,7 @@ function end_day(){
 		with(global.garden_plant_list[| i]){
 			if (plant_data.effect != -1) switch(plant_data.effect){
 				case plant_effects.CHANGE_HEAT:
-					change_heat(gx, gy, plant_data.effect_radius, plant_data.effect_strength);
+					change_heat(gx, gy, plant_data.effect_radius, plant_data.effect_strength, self);
 					break;
 			}
 		}
